@@ -364,6 +364,122 @@
           </article>
         </div>
       </div>
+
+      <!-- Service Calculator -->
+      <div style="margin-top: 4rem;">
+        <div class="section-head reveal">
+          <h3>Service Calculator</h3>
+          <p>Estimate your investment in beautiful, healthy curls</p>
+        </div>
+        
+        <div class="service-calculator reveal">
+          <div class="calculator-grid">
+            <div class="calculator-services">
+              <h4>Select Your Services</h4>
+              <div class="calculator-service-list">
+                <label class="calculator-service-item">
+                  <input type="checkbox" data-service="signature-cut" data-price="95" data-duration="90">
+                  <div class="service-checkbox"></div>
+                  <div class="service-details">
+                    <div class="service-name">Signature Dry Curly Cut</div>
+                    <div class="service-price">$95</div>
+                    <div class="service-duration">90 min</div>
+                  </div>
+                </label>
+
+                <label class="calculator-service-item">
+                  <input type="checkbox" data-service="color-highlights" data-price="150" data-duration="180">
+                  <div class="service-checkbox"></div>
+                  <div class="service-details">
+                    <div class="service-name">Color & Pintura Highlights</div>
+                    <div class="service-price">$150</div>
+                    <div class="service-duration">2-3 hours</div>
+                  </div>
+                </label>
+
+                <label class="calculator-service-item">
+                  <input type="checkbox" data-service="gloss-treatment" data-price="75" data-duration="45">
+                  <div class="service-checkbox"></div>
+                  <div class="service-details">
+                    <div class="service-name">Gloss & Glaze Treatment</div>
+                    <div class="service-price">$75</div>
+                    <div class="service-duration">45 min</div>
+                  </div>
+                </label>
+
+                <label class="calculator-service-item">
+                  <input type="checkbox" data-service="scalp-treatment" data-price="65" data-duration="60">
+                  <div class="service-checkbox"></div>
+                  <div class="service-details">
+                    <div class="service-name">Scalp & Repair Treatment</div>
+                    <div class="service-price">$65</div>
+                    <div class="service-duration">60 min</div>
+                  </div>
+                </label>
+
+                <label class="calculator-service-item">
+                  <input type="checkbox" data-service="styling-education" data-price="55" data-duration="75">
+                  <div class="service-checkbox"></div>
+                  <div class="service-details">
+                    <div class="service-name">Styling & Education Session</div>
+                    <div class="service-price">$55</div>
+                    <div class="service-duration">75 min</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="calculator-summary">
+              <div class="summary-card">
+                <h4>Your Appointment Summary</h4>
+                
+                <div class="selected-services" id="selected-services">
+                  <p class="empty-state">Select services to see your estimate</p>
+                </div>
+
+                <div class="summary-totals">
+                  <div class="total-line">
+                    <span>Subtotal:</span>
+                    <span id="calc-subtotal">$0</span>
+                  </div>
+                  <div class="total-line discount-line" id="discount-line" style="display: none;">
+                    <span>Package Discount:</span>
+                    <span id="calc-discount">-$0</span>
+                  </div>
+                  <div class="total-line total">
+                    <span>Total Investment:</span>
+                    <span id="calc-total">$0</span>
+                  </div>
+                  <div class="duration-info">
+                    <span>Estimated Duration:</span>
+                    <span id="calc-duration">0 min</span>
+                  </div>
+                </div>
+
+                <div class="savings-indicator" id="savings-indicator" style="display: none;">
+                  <div class="savings-badge">
+                    <span class="savings-icon">💰</span>
+                    <span class="savings-text">You save <span id="savings-amount">$0</span>!</span>
+                  </div>
+                </div>
+
+                <div class="calculator-actions">
+                  <button type="button" class="btn btn-primary calculator-book-btn" id="calculator-book-btn" disabled>
+                    Book These Services
+                  </button>
+                  <button type="button" class="btn btn-outline calculator-clear-btn" id="calculator-clear-btn">
+                    Clear All
+                  </button>
+                </div>
+
+                <div class="financing-info">
+                  <p class="financing-text">💳 <strong>Financing Available:</strong> Split your payment with flexible options starting at $25/month</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="wave-divider bottom" aria-hidden="true">
       <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
