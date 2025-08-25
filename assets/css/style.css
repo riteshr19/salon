@@ -2131,9 +2131,336 @@ select:focus {
   animation: pulse-button 3s ease-in-out infinite;
 }
 
+/* Enhanced CTA effects */
+.btn-primary.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary.shine-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s;
+}
+
+.btn-primary.shine-effect:hover::before {
+  left: 100%;
+}
+
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.animate-pulse {
+  animation: pulse-icon 2s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.btn-accent {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--success);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  animation: accent-glow 2s ease-in-out infinite;
+}
+
+@keyframes accent-glow {
+  0%, 100% { box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  50% { box-shadow: 0 2px 8px rgba(74,222,128,0.5); }
+}
+
+/* Enhanced secondary CTA */
+.enhanced-links .link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.enhanced-links .link-button:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(208,107,31,0.3);
+  transform: translateY(-1px);
+}
+
+.link-icon {
+  font-size: 0.9rem;
+}
+
+.link-arrow {
+  transition: transform 0.3s ease;
+}
+
+.link-button:hover .link-arrow {
+  transform: translateX(3px);
+}
+
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--orange-gradient);
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Urgency banner */
+.urgency-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(45deg, rgba(239,68,68,0.9), rgba(220,38,38,0.9));
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  position: relative;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(239,68,68,0.3);
+  animation: urgency-pulse 3s ease-in-out infinite;
+}
+
+.urgency-icon {
+  font-size: 1.1rem;
+  animation: flash 1.5s ease-in-out infinite;
+}
+
+.urgency-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.6);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
 @keyframes pulse-button {
   0%, 100% { box-shadow: var(--shadow); }
   50% { box-shadow: var(--shadow-lg), 0 0 0 4px rgba(208,107,31,0.3); }
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes urgency-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* Enhanced Trust Indicators */
+.premium-stats .trust-item {
+  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.premium-stats .trust-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(208,107,31,0.1), transparent);
+  transition: left 0.8s ease;
+}
+
+.premium-stats .trust-item:hover::before {
+  left: 100%;
+}
+
+.premium-stats .trust-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(208,107,31,0.3);
+}
+
+.floating-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.trust-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.trust-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: var(--orange-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.3rem;
+}
+
+.trust-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Enhanced Social Proof */
+.premium-testimonial {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-top: 2rem;
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.testimonial-bg {
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(208,107,31,0.1), transparent);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.quote-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-size: 3rem;
+  color: var(--orange);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+.proof-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.proof-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.proof-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid var(--orange);
+  box-shadow: var(--shadow);
+}
+
+.proof-name {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.proof-rating {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.proof-badge {
+  font-size: 0.8rem;
+  color: var(--success);
+  font-weight: 500;
+}
+
+/* Counter animation styles */
+.counter {
+  transition: all 0.3s ease;
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+  .premium-stats .trust-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .premium-stats .trust-item {
+    padding: 1rem 0.5rem;
+  }
+  
+  .trust-number {
+    font-size: 1.5rem;
+  }
+  
+  .premium-testimonial {
+    padding: 1.5rem;
+  }
+  
+  .quote-icon {
+    font-size: 2rem;
+    top: 0.5rem;
+    left: 1rem;
+  }
 }
 
 .btn-icon {

@@ -411,22 +411,148 @@ class AccessibilityManager {
     }
   }
 
-  trapFocus(e, container) {
-    const focusableElements = container.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
+  }
+}
 
-    if (e.shiftKey) {
-      if (document.activeElement === firstElement) {
-        lastElement.focus();
-        e.preventDefault();
+// Counter Animation Class
+class CounterAnimations {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.setupIntersectionObserver();
+  }
+
+  setupIntersectionObserver() {
+    if (!window.IntersectionObserver) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+          this.animateCounter(entry.target);
+          entry.target.classList.add('counted');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    document.querySelectorAll('.counter').forEach(counter => {
+      observer.observe(counter);
+    });
+  }
+
+  animateCounter(element) {
+    const target = parseFloat(element.getAttribute('data-target'));
+    const isDecimal = target % 1 !== 0;
+    const duration = 2000;
+    const stepTime = 50;
+    const steps = duration / stepTime;
+    const stepValue = target / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += stepValue;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
       }
-    } else if (document.activeElement === lastElement) {
-      firstElement.focus();
-      e.preventDefault();
+      
+      if (isDecimal) {
+        element.textContent = current.toFixed(1) + '★';
+      } else {
+        element.textContent = Math.floor(current) + '+';
+      }
+    }, stepTime);
+  }
+}
+
+// Enhanced interactions class
+class EnhancedInteractions {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.setupCTATracking();
+    this.setupServiceBookingPreselection();
+    this.setupUrgencyBanner();
+    this.setupScrollAnimations();
+  }
+
+  setupCTATracking() {
+    document.querySelectorAll('[data-cta]').forEach(cta => {
+      cta.addEventListener('click', (e) => {
+        const ctaType = e.currentTarget.getAttribute('data-cta');
+        console.log(`CTA clicked: ${ctaType}`);
+        
+        // Add analytics tracking here if needed
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'cta_click', {
+            'cta_type': ctaType,
+            'page_location': window.location.href
+          });
+        }
+      });
+    });
+  }
+
+  setupServiceBookingPreselection() {
+    document.querySelectorAll('.book-service').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const service = e.currentTarget.getAttribute('data-service');
+        
+        // Scroll to booking form
+        document.getElementById('contact').scrollIntoView({
+          behavior: 'smooth'
+        });
+        
+        // Pre-select the service in the booking form after scroll
+        setTimeout(() => {
+          this.preselectService(service);
+        }, 1000);
+      });
+    });
+  }
+
+  preselectService(serviceName) {
+    const serviceCheckboxes = document.querySelectorAll('input[name="services"]');
+    serviceCheckboxes.forEach(checkbox => {
+      const label = checkbox.closest('label');
+      const serviceTitle = label.querySelector('h5');
+      if (serviceTitle && serviceTitle.textContent.includes(serviceName.split(' ')[0])) {
+        checkbox.checked = true;
+        checkbox.dispatchEvent(new Event('change'));
+      }
+    });
+  }
+
+  setupUrgencyBanner() {
+    const urgencyBanner = document.querySelector('.urgency-banner');
+    if (urgencyBanner) {
+      // Simulate dynamic slot availability
+      setInterval(() => {
+        const slots = Math.floor(Math.random() * 5) + 1;
+        const urgencyText = urgencyBanner.querySelector('.urgency-text');
+        urgencyText.textContent = `Only ${slots} slots left this week!`;
+      }, 30000); // Update every 30 seconds
     }
+  }
+
+  setupScrollAnimations() {
+    // Add parallax effect to hero elements
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.5;
+      
+      const heroMedia = document.querySelector('.hero-media');
+      if (heroMedia) {
+        heroMedia.style.transform = `translateY(${rate}px)`;
+      }
+    });
   }
 }
 
@@ -438,6 +564,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const bookingForm = new BookingForm();
   const lazyLoader = new LazyLoader();
   const accessibilityManager = new AccessibilityManager();
+  const counterAnimations = new CounterAnimations();
+  const enhancedInteractions = new EnhancedInteractions();
   
   // Store references to prevent garbage collection
   window.salonComponents = {
@@ -446,7 +574,9 @@ document.addEventListener('DOMContentLoaded', () => {
     gallery,
     bookingForm,
     lazyLoader,
-    accessibilityManager
+    accessibilityManager,
+    counterAnimations,
+    enhancedInteractions
   };
   
   // Console message for developers
