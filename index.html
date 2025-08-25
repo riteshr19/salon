@@ -99,21 +99,77 @@
     <div class="decor decor-bolt" aria-hidden="true"></div>
     <div class="container hero-grid">
       <div class="hero-copy">
-        <h1>Curly Hair Artistry.<br><span class="accent">Bold Color.</span> Modern Cuts.</h1>
-        <p>We're Boston's premier curly hair destination with a rock‑n‑roll edge. Specialists in curls, waves, and texture — inspired by art, design, and a fearless Bowie attitude that celebrates your unique beauty.</p>
-        <div class="cta-row">
-          <a href="#contact" class="btn btn-lg">Book Your Transformation</a>
-          <a href="#services" class="btn btn-outline btn-lg">Explore Services</a>
+        <div class="hero-badge reveal">
+          <span class="badge-icon">🏆</span>
+          <span class="badge-text">Boston's #1 Curly Hair Specialists</span>
+        </div>
+        <h1>Transform Your Curls with <br><span class="accent">Expert Artistry</span> & <span class="accent">Premium Care</span></h1>
+        <p class="hero-subtitle">Experience Boston's premier curly hair salon where 30+ years of expertise meets cutting-edge techniques. Our DevaCurl-certified stylists specialize in transforming curls, coils, and waves into stunning, healthy hair that celebrates your natural beauty.</p>
+        
+        <!-- Enhanced CTA section -->
+        <div class="cta-section">
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-primary btn-lg pulse-effect">
+              <span class="btn-icon">📅</span>
+              <span class="btn-text">Book Your Transformation</span>
+              <span class="btn-subtitle">Free Consultation Included</span>
+            </a>
+            <a href="tel:+16173750673" class="btn btn-outline btn-lg">
+              <span class="btn-icon">📞</span>
+              <span class="btn-text">Call (617) 375-0673</span>
+            </a>
+          </div>
+          <div class="secondary-cta">
+            <a href="#services" class="link-button">Explore Our Services →</a>
+            <span class="divider">•</span>
+            <a href="#gallery" class="link-button">View Portfolio →</a>
+          </div>
         </div>
         
-        <!-- Trust indicators -->
-        <div class="trust-indicators" style="margin-top: 2rem; display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <div style="color: var(--gold);">★★★★★</div>
-            <span style="color: var(--text-muted); font-size: 0.9rem;">4.9/5 from 200+ clients</span>
+        <!-- Enhanced trust indicators -->
+        <div class="trust-indicators-enhanced">
+          <div class="trust-stats">
+            <div class="trust-item">
+              <div class="trust-icon">⭐</div>
+              <div class="trust-content">
+                <div class="trust-number">4.9★</div>
+                <div class="trust-label">Google Rating</div>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">👥</div>
+              <div class="trust-content">
+                <div class="trust-number">500+</div>
+                <div class="trust-label">Happy Clients</div>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🎓</div>
+              <div class="trust-content">
+                <div class="trust-number">30+</div>
+                <div class="trust-label">Years Experience</div>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🏅</div>
+              <div class="trust-content">
+                <div class="trust-number">DevaCurl</div>
+                <div class="trust-label">Certified</div>
+              </div>
+            </div>
           </div>
-          <div style="color: var(--text-muted); font-size: 0.9rem;">✨ 10+ years experience</div>
-          <div style="color: var(--text-muted); font-size: 0.9rem;">🏆 Award-winning salon</div>
+          
+          <!-- Social proof -->
+          <div class="social-proof">
+            <p class="proof-text">"Best curly hair salon in Boston! Transformed my hair and my confidence."</p>
+            <div class="proof-author">
+              <img src="assets/img/avatar-1.jpg" alt="Happy client" class="proof-avatar">
+              <div class="proof-info">
+                <div class="proof-name">Sarah M.</div>
+                <div class="proof-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="hero-media">
@@ -167,42 +223,96 @@
         <p>Transform your curls with our signature services. Each experience includes personalized consultation and curl care education.</p>
       </div>
       <div class="card-grid">
-        <!-- Service cards with pricing -->
-        <article class="card reveal">
+        <!-- Enhanced service cards with booking -->
+        <article class="card service-card reveal" data-service="Signature Dry Curly Cut">
           <div class="card-icon"><span class="dot"></span></div>
           <h3>Signature Dry Curly Cut</h3>
           <p>Personalized shape based on your curl pattern and lifestyle. Includes comprehensive curl education and styling tips.</p>
-          <div class="service-price">Starting at $95</div>
+          <div class="service-features">
+            <span class="feature">🎓 DevaCurl Certified</span>
+            <span class="feature">⏱️ 90 min session</span>
+            <span class="feature">📚 Education included</span>
+          </div>
+          <div class="service-pricing">
+            <div class="service-price">Starting at $95</div>
+            <a href="#contact" class="btn btn-sm book-service" data-service="Signature Dry Curly Cut">Book This Service</a>
+          </div>
         </article>
-        <article class="card reveal">
+        
+        <article class="card service-card reveal featured" data-service="Color & Pintura Highlights">
+          <div class="popular-badge">Most Popular</div>
           <div class="card-icon"><span class="dot"></span></div>
           <h3>Color &amp; Pintura Highlights</h3>
           <p>Hand‑painted dimension designed to move with your curls. Customized color that enhances your natural texture.</p>
-          <div class="service-price">Starting at $150</div>
+          <div class="service-features">
+            <span class="feature">🎨 Hand-painted</span>
+            <span class="feature">⏱️ 2-3 hours</span>
+            <span class="feature">🌈 Custom color</span>
+          </div>
+          <div class="service-pricing">
+            <div class="service-price">Starting at $150</div>
+            <a href="#contact" class="btn btn-sm book-service" data-service="Color & Pintura Highlights">Book This Service</a>
+          </div>
         </article>
-        <article class="card reveal">
+        
+        <article class="card service-card reveal" data-service="Gloss & Glaze Treatment">
           <div class="card-icon"><span class="dot"></span></div>
           <h3>Gloss &amp; Glaze Treatment</h3>
           <p>Shine and tone refreshes to keep your color vibrant and hair healthy. Perfect for maintaining that salon-fresh look.</p>
-          <div class="service-price">Starting at $75</div>
+          <div class="service-features">
+            <span class="feature">✨ Instant shine</span>
+            <span class="feature">⏱️ 45 minutes</span>
+            <span class="feature">🔄 Color refresh</span>
+          </div>
+          <div class="service-pricing">
+            <div class="service-price">Starting at $75</div>
+            <a href="#contact" class="btn btn-sm book-service" data-service="Gloss & Glaze Treatment">Book This Service</a>
+          </div>
         </article>
-        <article class="card reveal">
+        
+        <article class="card service-card reveal" data-service="Scalp & Repair Treatments">
           <div class="card-icon"><span class="dot"></span></div>
           <h3>Scalp &amp; Repair Treatments</h3>
           <p>Nourish from root to tip with clean, effective care. Deep conditioning treatments for ultimate curl health.</p>
-          <div class="service-price">Starting at $65</div>
+          <div class="service-features">
+            <span class="feature">💆‍♀️ Scalp massage</span>
+            <span class="feature">⏱️ 60 minutes</span>
+            <span class="feature">🌿 Natural products</span>
+          </div>
+          <div class="service-pricing">
+            <div class="service-price">Starting at $65</div>
+            <a href="#contact" class="btn btn-sm book-service" data-service="Scalp & Repair Treatments">Book This Service</a>
+          </div>
         </article>
-        <article class="card reveal">
+        
+        <article class="card service-card reveal" data-service="Styling & Education Session">
           <div class="card-icon"><span class="dot"></span></div>
           <h3>Styling &amp; Education Session</h3>
           <p>Learn professional techniques for wash‑day, refreshes, and long‑lasting shape. Take home the knowledge.</p>
-          <div class="service-price">Starting at $55</div>
+          <div class="service-features">
+            <span class="feature">📚 Professional tips</span>
+            <span class="feature">⏱️ 75 minutes</span>
+            <span class="feature">🎯 Personalized</span>
+          </div>
+          <div class="service-pricing">
+            <div class="service-price">Starting at $55</div>
+            <a href="#contact" class="btn btn-sm book-service" data-service="Styling & Education Session">Book This Service</a>
+          </div>
         </article>
-        <article class="card reveal">
+        
+        <article class="card service-card reveal" data-service="Transformative Cuts & Styles">
           <div class="card-icon"><span class="dot"></span></div>
           <h3>Transformative Cuts &amp; Styles</h3>
           <p>From sculpted bobs to bold chops — dramatic transformations tailored specifically to your face shape and lifestyle.</p>
-          <div class="service-price">Starting at $110</div>
+          <div class="service-features">
+            <span class="feature">✂️ Bold cuts</span>
+            <span class="feature">⏱️ 2 hours</span>
+            <span class="feature">🎨 Complete restyle</span>
+          </div>
+          <div class="service-pricing">
+            <div class="service-price">Starting at $110</div>
+            <a href="#contact" class="btn btn-sm book-service" data-service="Transformative Cuts & Styles">Book This Service</a>
+          </div>
         </article>
       </div>
       
@@ -417,99 +527,226 @@
       </div>
       
       <div class="media reveal">
-        <form class="contact-form" id="booking-form">
-          <div class="success-message" id="success-message">
-            <strong>Thank you!</strong> We've received your booking request and will confirm your appointment within 24 hours.
-          </div>
-          
-          <h3 style="margin: 0 0 1.5rem; text-align: center; color: var(--text);">Book Your Appointment</h3>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name *</label>
-              <input type="text" id="firstName" name="firstName" required />
-              <div class="error-message">Please enter your first name</div>
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name *</label>
-              <input type="text" id="lastName" name="lastName" required />
-              <div class="error-message">Please enter your last name</div>
-            </div>
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" required />
-              <div class="error-message">Please enter a valid email address</div>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" required />
-              <div class="error-message">Please enter your phone number</div>
+        <!-- Enhanced Multi-Step Booking Form -->
+        <div class="booking-container">
+          <div class="booking-header">
+            <h3>Book Your Transformation</h3>
+            <p>Join 500+ happy clients who love their curls</p>
+            <div class="progress-bar">
+              <div class="progress-step active" data-step="1">
+                <span class="step-number">1</span>
+                <span class="step-label">Service</span>
+              </div>
+              <div class="progress-line"></div>
+              <div class="progress-step" data-step="2">
+                <span class="step-number">2</span>
+                <span class="step-label">Details</span>
+              </div>
+              <div class="progress-line"></div>
+              <div class="progress-step" data-step="3">
+                <span class="step-number">3</span>
+                <span class="step-label">Schedule</span>
+              </div>
             </div>
           </div>
-          
-          <div class="form-group">
-            <label for="services">Services Interested In *</label>
-            <div class="service-options">
-              <label class="service-option">
-                <input type="checkbox" name="services" value="cut" />
-                <span>Curly Cut ($95+)</span>
-              </label>
-              <label class="service-option">
-                <input type="checkbox" name="services" value="color" />
-                <span>Color Service ($150+)</span>
-              </label>
-              <label class="service-option">
-                <input type="checkbox" name="services" value="treatment" />
-                <span>Treatment ($65+)</span>
-              </label>
-              <label class="service-option">
-                <input type="checkbox" name="services" value="styling" />
-                <span>Styling Session ($55+)</span>
-              </label>
+
+          <form class="booking-form" id="enhanced-booking-form">
+            <!-- Success Message -->
+            <div class="success-message hidden" id="booking-success">
+              <div class="success-icon">✓</div>
+              <h4>Booking Request Sent!</h4>
+              <p>Thank you for choosing Shan Hair! We'll contact you within 24 hours to confirm your appointment.</p>
+              <div class="success-actions">
+                <a href="tel:+16173750673" class="btn btn-outline btn-sm">Call Us Now</a>
+                <button type="button" class="btn btn-sm" onclick="resetBookingForm()">Book Another</button>
+              </div>
             </div>
-            <div class="error-message">Please select at least one service</div>
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label for="preferredDate">Preferred Date</label>
-              <input type="date" id="preferredDate" name="preferredDate" />
+
+            <!-- Step 1: Service Selection -->
+            <div class="form-step active" data-step="1">
+              <div class="step-header">
+                <h4>What service are you interested in?</h4>
+                <p>Choose your transformation (you can select multiple services)</p>
+              </div>
+              
+              <div class="service-selection">
+                <label class="service-card-option" data-price="95">
+                  <input type="checkbox" name="services" value="signature-cut" />
+                  <div class="service-option-content">
+                    <div class="service-icon">✂️</div>
+                    <div class="service-info">
+                      <h5>Signature Dry Curly Cut</h5>
+                      <p>Personalized shape for your curl pattern</p>
+                      <span class="service-duration">90 minutes</span>
+                    </div>
+                    <div class="service-price">$95+</div>
+                  </div>
+                </label>
+
+                <label class="service-card-option featured" data-price="150">
+                  <input type="checkbox" name="services" value="color-highlights" />
+                  <div class="service-option-content">
+                    <div class="popular-tag">Most Popular</div>
+                    <div class="service-icon">🎨</div>
+                    <div class="service-info">
+                      <h5>Color & Pintura Highlights</h5>
+                      <p>Hand-painted dimension for curls</p>
+                      <span class="service-duration">2-3 hours</span>
+                    </div>
+                    <div class="service-price">$150+</div>
+                  </div>
+                </label>
+
+                <label class="service-card-option" data-price="75">
+                  <input type="checkbox" name="services" value="gloss-treatment" />
+                  <div class="service-option-content">
+                    <div class="service-icon">✨</div>
+                    <div class="service-info">
+                      <h5>Gloss & Glaze Treatment</h5>
+                      <p>Shine and tone refreshes</p>
+                      <span class="service-duration">45 minutes</span>
+                    </div>
+                    <div class="service-price">$75+</div>
+                  </div>
+                </label>
+
+                <label class="service-card-option" data-price="65">
+                  <input type="checkbox" name="services" value="scalp-treatment" />
+                  <div class="service-option-content">
+                    <div class="service-icon">💆‍♀️</div>
+                    <div class="service-info">
+                      <h5>Scalp & Repair Treatment</h5>
+                      <p>Deep conditioning for curl health</p>
+                      <span class="service-duration">60 minutes</span>
+                    </div>
+                    <div class="service-price">$65+</div>
+                  </div>
+                </label>
+              </div>
+
+              <div class="price-estimate">
+                <div class="estimate-content">
+                  <span class="estimate-label">Estimated Total:</span>
+                  <span class="estimate-price" id="price-estimate">Select services</span>
+                </div>
+              </div>
+
+              <div class="step-actions">
+                <button type="button" class="btn btn-primary btn-lg next-step" disabled>
+                  Continue to Details
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="preferredTime">Preferred Time</label>
-              <select id="preferredTime" name="preferredTime">
-                <option value="">Select a time</option>
-                <option value="10:00">10:00 AM</option>
-                <option value="11:00">11:00 AM</option>
-                <option value="12:00">12:00 PM</option>
-                <option value="13:00">1:00 PM</option>
-                <option value="14:00">2:00 PM</option>
-                <option value="15:00">3:00 PM</option>
-                <option value="16:00">4:00 PM</option>
-              </select>
+
+            <!-- Step 2: Personal Details -->
+            <div class="form-step" data-step="2">
+              <div class="step-header">
+                <h4>Tell us about yourself</h4>
+                <p>We'll use this information to personalize your experience</p>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" required />
+                  <div class="error-message">Please enter your first name</div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" required />
+                  <div class="error-message">Please enter your last name</div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required />
+                  <div class="error-message">Please enter a valid email address</div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" required />
+                  <div class="error-message">Please enter your phone number</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="hairType">Tell us about your hair</label>
+                <textarea id="hairType" name="hairType" placeholder="Describe your curl type, current routine, goals, or any specific concerns..." rows="4"></textarea>
+              </div>
+
+              <div class="step-actions">
+                <button type="button" class="btn btn-outline prev-step">
+                  ← Back to Services
+                </button>
+                <button type="button" class="btn btn-primary btn-lg next-step">
+                  Continue to Schedule
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
             </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="hairType">Tell us about your hair</label>
-            <textarea id="hairType" name="hairType" placeholder="Describe your curl type, current routine, goals, or any specific concerns..."></textarea>
-          </div>
-          
-          <div class="form-group">
-            <label class="service-option" style="margin-top: 1rem;">
-              <input type="checkbox" name="newsletter" value="yes" />
-              <span>Subscribe to our newsletter for curl care tips and special offers</span>
-            </label>
-          </div>
-          
-          <button type="submit" class="btn" style="width: 100%; justify-content: center;">
-            <span class="btn-text">Book My Appointment</span>
-            <span class="loading-spinner" style="display: none;"></span>
-          </button>
-        </form>
+
+            <!-- Step 3: Scheduling -->
+            <div class="form-step" data-step="3">
+              <div class="step-header">
+                <h4>When would you like to come in?</h4>
+                <p>Choose your preferred date and time</p>
+              </div>
+
+              <div class="scheduling-grid">
+                <div class="form-group">
+                  <label for="preferredDate">Preferred Date *</label>
+                  <input type="date" id="preferredDate" name="preferredDate" required />
+                  <div class="error-message">Please select a date</div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="preferredTime">Preferred Time *</label>
+                  <select id="preferredTime" name="preferredTime" required>
+                    <option value="">Select a time</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">1:00 PM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                    <option value="16:00">4:00 PM</option>
+                  </select>
+                  <div class="error-message">Please select a time</div>
+                </div>
+              </div>
+
+              <div class="booking-summary">
+                <h5>Booking Summary</h5>
+                <div class="summary-content">
+                  <div class="summary-services" id="summary-services"></div>
+                  <div class="summary-price" id="summary-price"></div>
+                  <div class="summary-duration" id="summary-duration"></div>
+                </div>
+              </div>
+
+              <div class="form-group newsletter-signup">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="newsletter" value="yes" />
+                  <span class="checkbox-custom"></span>
+                  <span>Subscribe to our newsletter for curl care tips and exclusive offers</span>
+                </label>
+              </div>
+
+              <div class="step-actions">
+                <button type="button" class="btn btn-outline prev-step">
+                  ← Back to Details
+                </button>
+                <button type="submit" class="btn btn-primary btn-lg">
+                  <span class="btn-text">Book My Appointment</span>
+                  <span class="loading-spinner hidden"></span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     
