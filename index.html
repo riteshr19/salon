@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shan Hair — Premium Curly Hair Artistry | Boston Salon</title>
+  <meta name="description" content="Boston's premier curly hair salon. Specialized cuts, hand-painted color, and expert curl care. Book your transformation today." />
+  <meta name="keywords" content="curly hair salon, Boston hair salon, curly cuts, curl specialist, hair color, Pintura highlights" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shan Hair — Premium Curly Hair Artistry">
+  <meta property="og:description" content="Boston's premier curly hair salon specializing in cuts, color, and curl care.">
+  <meta property="og:image" content="assets/img/hero.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Shan Hair — Premium Curly Hair Artistry">
+  <meta property="twitter:description" content="Boston's premier curly hair salon specializing in cuts, color, and curl care.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- PWA meta tags -->
+  <meta name="theme-color" content="#d06b1f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Shan Hair">
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Shan Hair",
+    "description": "Premium curly hair salon specializing in cuts, color, and curl care",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brookline",
+      "addressRegion": "MA",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-617-555-0123",
+    "email": "hello@shanhair.com",
+    "openingHours": "Tu-Fr 10:00-18:00",
+    "priceRange": "$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Hair Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Signature Dry Curly Cut",
+            "description": "Personalized shape based on your curl pattern"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header" id="header">
+    <div class="container nav-wrap">
+      <a href="#hero" class="brand" aria-label="Shan Hair Home">
+        <img src="assets/img/logo.svg" alt="Shan Hair logo" />
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+                      <nav class="site-nav" role="navigation" aria-label="Main Navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact" class="btn btn-secondary">Book Now</a></li>
+                    </ul>
+                </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero section" aria-label="Welcome">
+    <div class="decor decor-bolt" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Curly Hair Artistry.<br><span class="accent">Bold Color.</span> Modern Cuts.</h1>
+        <p>We're Boston's premier curly hair destination with a rock‑n‑roll edge. Specialists in curls, waves, and texture — inspired by art, design, and a fearless Bowie attitude that celebrates your unique beauty.</p>
+        <div class="cta-row">
+          <a href="#contact" class="btn btn-lg">Book Your Transformation</a>
+          <a href="#services" class="btn btn-outline btn-lg">Explore Services</a>
+        </div>
+        
+        <!-- Trust indicators -->
+        <div class="trust-indicators" style="margin-top: 2rem; display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div style="color: var(--gold);">★★★★★</div>
+            <span style="color: var(--text-muted); font-size: 0.9rem;">4.9/5 from 200+ clients</span>
+          </div>
+          <div style="color: var(--text-muted); font-size: 0.9rem;">✨ 10+ years experience</div>
+          <div style="color: var(--text-muted); font-size: 0.9rem;">🏆 Award-winning salon</div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/img/hero.jpg" alt="Beautiful curly hair transformation at Shan Hair salon" loading="eager" />
+        <div class="floating-circles">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+    <div class="wave-divider bottom" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,80 C320,140 1120,20 1440,80 L1440,120 L0,120 Z" />
+      </svg>
+    </div>
+  </section>  <!-- TATSU SECTION: ABOUT -->
+  <section id="about" class="about section alt-bg">
+    <div class="wave-divider top" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,40 C360,0 1080,160 1440,40 L1440,0 L0,0 Z" />
+      </svg>
+    </div>
+    <div class="container two-col">
+      <div class="media reveal">
+        <div class="circle-frame">
+          <img src="assets/img/about.jpg" alt="About placeholder" />
+        </div>
+      </div>
+      <div class="content reveal">
+        <h2>About <span class="accent">Shan Hair</span></h2>
+        <p>Born from a love of design and texture, we celebrate curls in all their shapes — coils, waves, and ringlets. Our approach blends craft and creativity: dry cutting for precision, modern color that moves, and styling that lasts.</p>
+        <ul class="bullets">
+          <li>Signature dry‑cutting &amp; curl‑care education</li>
+          <li>Modern, mid‑century inspired space with warm walnut details</li>
+          <li>A playful, Bowie‑tinged, rock‑n‑roll spirit</li>
+        </ul>
+        <a href="#contact" class="btn">Start Your Curl Journey</a>
+      </div>
+    </div>
+    <div class="wave-divider bottom" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,80 C320,140 1120,20 1440,80 L1440,120 L0,120 Z" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="services section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Our Services</h2>
+        <p>Transform your curls with our signature services. Each experience includes personalized consultation and curl care education.</p>
+      </div>
+      <div class="card-grid">
+        <!-- Service cards with pricing -->
+        <article class="card reveal">
+          <div class="card-icon"><span class="dot"></span></div>
+          <h3>Signature Dry Curly Cut</h3>
+          <p>Personalized shape based on your curl pattern and lifestyle. Includes comprehensive curl education and styling tips.</p>
+          <div class="service-price">Starting at $95</div>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon"><span class="dot"></span></div>
+          <h3>Color &amp; Pintura Highlights</h3>
+          <p>Hand‑painted dimension designed to move with your curls. Customized color that enhances your natural texture.</p>
+          <div class="service-price">Starting at $150</div>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon"><span class="dot"></span></div>
+          <h3>Gloss &amp; Glaze Treatment</h3>
+          <p>Shine and tone refreshes to keep your color vibrant and hair healthy. Perfect for maintaining that salon-fresh look.</p>
+          <div class="service-price">Starting at $75</div>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon"><span class="dot"></span></div>
+          <h3>Scalp &amp; Repair Treatments</h3>
+          <p>Nourish from root to tip with clean, effective care. Deep conditioning treatments for ultimate curl health.</p>
+          <div class="service-price">Starting at $65</div>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon"><span class="dot"></span></div>
+          <h3>Styling &amp; Education Session</h3>
+          <p>Learn professional techniques for wash‑day, refreshes, and long‑lasting shape. Take home the knowledge.</p>
+          <div class="service-price">Starting at $55</div>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon"><span class="dot"></span></div>
+          <h3>Transformative Cuts &amp; Styles</h3>
+          <p>From sculpted bobs to bold chops — dramatic transformations tailored specifically to your face shape and lifestyle.</p>
+          <div class="service-price">Starting at $110</div>
+        </article>
+      </div>
+      
+      <!-- Service packages -->
+      <div style="margin-top: 4rem;">
+        <div class="section-head reveal">
+          <h3>Popular Packages</h3>
+          <p>Save with our curated service combinations</p>
+        </div>
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 800px; margin: 0 auto;">
+          <article class="card reveal" style="border: 2px solid var(--orange); position: relative;">
+            <div style="position: absolute; top: -12px; left: 1rem; background: var(--orange-gradient); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700;">MOST POPULAR</div>
+            <div class="card-icon"><span class="dot"></span></div>
+            <h3>Complete Curl Makeover</h3>
+            <p>Cut + Color + Treatment + Styling Session</p>
+            <div class="service-price">$285 <span style="text-decoration: line-through; color: var(--text-muted); font-size: 0.9rem;">$365</span></div>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><span class="dot"></span></div>
+            <h3>Refresh & Revive</h3>
+            <p>Cut + Gloss + Styling Session</p>
+            <div class="service-price">$195 <span style="text-decoration: line-through; color: var(--text-muted); font-size: 0.9rem;">$225</span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="wave-divider bottom" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,80 C320,140 1120,20 1440,80 L1440,120 L0,120 Z" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery" class="gallery section alt-bg">
+    <div class="wave-divider top" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,40 C360,0 1080,160 1440,40 L1440,0 L0,0 Z" />
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Our Work</h2>
+        <p>See the stunning transformations and artistry that make our clients feel confident and beautiful.</p>
+      </div>
+      
+      <!-- Gallery filters -->
+      <div class="gallery-filters reveal">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="cuts">Cuts</button>
+        <button class="filter-btn" data-filter="color">Color</button>
+        <button class="filter-btn" data-filter="curls">Curly Styles</button>
+        <button class="filter-btn" data-filter="transformations">Transformations</button>
+      </div>
+      
+      <div class="masonry" id="gallery-grid">
+        <figure class="masonry-item reveal" data-category="cuts curls">
+          <img src="assets/img/gallery-1.jpg" alt="Beautiful curly cut transformation" loading="lazy" />
+        </figure>
+        <figure class="masonry-item reveal" data-category="color transformations">
+          <img src="assets/img/gallery-2.jpg" alt="Stunning color and cut makeover" loading="lazy" />
+        </figure>
+        <figure class="masonry-item reveal" data-category="curls">
+          <img src="assets/img/gallery-3.jpg" alt="Natural curl enhancement" loading="lazy" />
+        </figure>
+        <figure class="masonry-item reveal" data-category="cuts">
+          <img src="assets/img/gallery-4.jpg" alt="Precision curly haircut" loading="lazy" />
+        </figure>
+        <figure class="masonry-item reveal" data-category="color">
+          <img src="assets/img/gallery-5.jpg" alt="Hand-painted color highlights" loading="lazy" />
+        </figure>
+        <figure class="masonry-item reveal" data-category="transformations color">
+          <img src="assets/img/gallery-6.jpg" alt="Complete hair transformation" loading="lazy" />
+        </figure>
+        <figure class="masonry-item reveal" data-category="curls cuts">
+          <img src="assets/img/gallery-7.jpg" alt="Curly bob haircut styling" loading="lazy" />
+        </figure>
+        <figure class="masonry-item reveal" data-category="color curls">
+          <img src="assets/img/gallery-8.jpg" alt="Colored curly hair styling" loading="lazy" />
+        </figure>
+      </div>
+      
+      <!-- Load more button -->
+      <div style="text-align: center; margin-top: 3rem;">
+        <button class="btn btn-outline" id="load-more-gallery">View More Work</button>
+      </div>
+    </div>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+      <img class="lightbox-content" src="" alt="" />
+    </div>
+    
+    <div class="wave-divider bottom" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,80 C320,140 1120,20 1440,80 L1440,120 L0,120 Z" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section id="testimonials" class="testimonials section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Client Love</h2>
+        <p>Don't just take our word for it — hear from our amazing clients about their transformative experiences.</p>
+      </div>
+      <div class="testi-grid">
+        <article class="testi reveal">
+          <div class="testi-header">
+            <img class="avatar" src="assets/img/avatar-1.jpg" alt="Sarah M." />
+            <div class="testi-info">
+              <h4>Sarah M.</h4>
+              <div class="role">Marketing Director</div>
+            </div>
+          </div>
+          <div class="rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>"Absolutely life-changing! I've struggled with my curls for years, and Shan Hair finally showed me how to love and work with my natural texture. The education was invaluable!"</blockquote>
+          <cite>— Verified Google Review</cite>
+        </article>
+        <article class="testi reveal">
+          <div class="testi-header">
+            <img class="avatar" src="assets/img/avatar-2.jpg" alt="Maya L." />
+            <div class="testi-info">
+              <h4>Maya L.</h4>
+              <div class="role">Creative Professional</div>
+            </div>
+          </div>
+          <div class="rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>"The salon vibe is incredible — modern, welcoming, and so inspiring. The color work is pure artistry. I get compliments everywhere I go!"</blockquote>
+          <cite>— Verified Yelp Review</cite>
+        </article>
+        <article class="testi reveal">
+          <div class="testi-header">
+            <img class="avatar" src="assets/img/avatar-3.jpg" alt="Jordan K." />
+            <div class="testi-info">
+              <h4>Jordan K.</h4>
+              <div class="role">Software Engineer</div>
+            </div>
+          </div>
+          <div class="rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>"Finally found someone who understands curly hair! The dry cutting technique is a game-changer. My curls have never looked better or been easier to manage."</blockquote>
+          <cite>— Verified Facebook Review</cite>
+        </article>
+      </div>
+      
+      <!-- Stats section -->
+      <div style="margin-top: 4rem; text-align: center;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto;">
+          <div class="reveal">
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--orange); font-family: 'Montserrat', sans-serif;">200+</div>
+            <div style="color: var(--text-muted); margin-top: 0.5rem;">Happy Clients</div>
+          </div>
+          <div class="reveal">
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--orange); font-family: 'Montserrat', sans-serif;">4.9★</div>
+            <div style="color: var(--text-muted); margin-top: 0.5rem;">Average Rating</div>
+          </div>
+          <div class="reveal">
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--orange); font-family: 'Montserrat', sans-serif;">10+</div>
+            <div style="color: var(--text-muted); margin-top: 0.5rem;">Years Experience</div>
+          </div>
+          <div class="reveal">
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--orange); font-family: 'Montserrat', sans-serif;">95%</div>
+            <div style="color: var(--text-muted); margin-top: 0.5rem;">Return Clients</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wave-divider bottom" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,80 C320,140 1120,20 1440,80 L1440,120 L0,120 Z" />
+      </svg>
+    </div>
+  </section>  <!-- TATSU SECTION: CONTACT -->
+    <!-- CONTACT SECTION -->
+  <section id="contact" class="contact section alt-bg">
+    <div class="wave-divider top" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,40 C360,0 1080,160 1440,40 L1440,0 L0,0 Z" />
+      </svg>
+    </div>
+    <div class="container two-col">
+      <div class="content reveal">
+        <h2>Book Your Visit</h2>
+        <p>Ready to transform your curls? Book your appointment today and discover what your hair has been waiting for. We can't wait to meet you!</p>
+        
+        <div class="contact-info">
+          <ul class="contact-list">
+            <li><strong>Location:</strong> 123 Beacon Street, Brookline, MA 02445</li>
+            <li><strong>Hours:</strong> Tuesday–Friday: 10AM–6PM<br>Saturday: 9AM–4PM</li>
+            <li><strong>Phone:</strong> <a href="tel:+16175550123">(617) 555-0123</a></li>
+            <li><strong>Email:</strong> <a href="mailto:hello@shanhair.com">hello@shanhair.com</a></li>
+          </ul>
+        </div>
+        
+        <!-- Quick booking links -->
+        <div style="margin-top: 2rem;">
+          <h4 style="margin-bottom: 1rem; color: var(--text);">Quick Actions</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <a href="tel:+16175550123" class="btn btn-outline" style="justify-content: flex-start;">📞 Call to Book</a>
+            <a href="https://calendly.com/shanhair" class="btn btn-outline" style="justify-content: flex-start;" target="_blank">📅 Online Scheduling</a>
+            <a href="mailto:hello@shanhair.com" class="btn btn-outline" style="justify-content: flex-start;">✉️ Email Us</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="media reveal">
+        <form class="contact-form" id="booking-form">
+          <div class="success-message" id="success-message">
+            <strong>Thank you!</strong> We've received your booking request and will confirm your appointment within 24 hours.
+          </div>
+          
+          <h3 style="margin: 0 0 1.5rem; text-align: center; color: var(--text);">Book Your Appointment</h3>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" required />
+              <div class="error-message">Please enter your first name</div>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" required />
+              <div class="error-message">Please enter your last name</div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+              <div class="error-message">Please enter a valid email address</div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required />
+              <div class="error-message">Please enter your phone number</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="services">Services Interested In *</label>
+            <div class="service-options">
+              <label class="service-option">
+                <input type="checkbox" name="services" value="cut" />
+                <span>Curly Cut ($95+)</span>
+              </label>
+              <label class="service-option">
+                <input type="checkbox" name="services" value="color" />
+                <span>Color Service ($150+)</span>
+              </label>
+              <label class="service-option">
+                <input type="checkbox" name="services" value="treatment" />
+                <span>Treatment ($65+)</span>
+              </label>
+              <label class="service-option">
+                <input type="checkbox" name="services" value="styling" />
+                <span>Styling Session ($55+)</span>
+              </label>
+            </div>
+            <div class="error-message">Please select at least one service</div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="preferredDate">Preferred Date</label>
+              <input type="date" id="preferredDate" name="preferredDate" />
+            </div>
+            <div class="form-group">
+              <label for="preferredTime">Preferred Time</label>
+              <select id="preferredTime" name="preferredTime">
+                <option value="">Select a time</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="13:00">1:00 PM</option>
+                <option value="14:00">2:00 PM</option>
+                <option value="15:00">3:00 PM</option>
+                <option value="16:00">4:00 PM</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="hairType">Tell us about your hair</label>
+            <textarea id="hairType" name="hairType" placeholder="Describe your curl type, current routine, goals, or any specific concerns..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label class="service-option" style="margin-top: 1rem;">
+              <input type="checkbox" name="newsletter" value="yes" />
+              <span>Subscribe to our newsletter for curl care tips and special offers</span>
+            </label>
+          </div>
+          
+          <button type="submit" class="btn" style="width: 100%; justify-content: center;">
+            <span class="btn-text">Book My Appointment</span>
+            <span class="loading-spinner" style="display: none;"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#careers">Careers</a>
+          <a href="https://instagram.com/shanhair" target="_blank">Instagram</a>
+          <a href="https://facebook.com/shanhair" target="_blank">Facebook</a>
+        </div>
+        <p>&copy; 2025 Shan Hair — All rights reserved. Made with ❤️ for beautiful curls.</p>
+      </div>
+    </footer>
+  </section>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

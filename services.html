@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Pricing - Shan Hair Salon</title>
+    <meta name="description" content="Professional hair services including cutting, styling, coloring, and treatments. View our complete pricing guide and book your appointment.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#d4af37">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/img/logo.svg" alt="Shan Hair Salon" width="120" height="40">
+                </div>
+                
+                <nav class="site-nav" role="navigation" aria-label="Main Navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact" class="btn btn-secondary">Book Now</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Services & Pricing</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="hero-content reveal">
+                <h1>Our Services & Pricing</h1>
+                <p class="hero-subtitle">Professional hair services tailored to enhance your natural beauty and personal style.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Note -->
+    <section class="important-note">
+        <div class="container">
+            <div class="note-content reveal">
+                <div class="note-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="note-text">
+                    <h3>Important: Dry Cut Preparation</h3>
+                    <p>We start with a dry cut. You must arrive with your curls down and dry. Avoid hairstyles that pull your hair up, like buns or ponytails. You can use hair products as long as the hair is NOT sticky or oily. Breaking these rules might lead to rescheduling or a fee. Let's keep it hassle-free!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Navigation -->
+    <section class="services-nav">
+        <div class="container">
+            <div class="services-tabs reveal">
+                <button class="tab-btn active" data-tab="cutting">
+                    <i class="fas fa-cut"></i>
+                    <span>Cutting</span>
+                </button>
+                <button class="tab-btn" data-tab="styling">
+                    <i class="fas fa-magic"></i>
+                    <span>Styling</span>
+                </button>
+                <button class="tab-btn" data-tab="coloring">
+                    <i class="fas fa-palette"></i>
+                    <span>Coloring</span>
+                </button>
+                <button class="tab-btn" data-tab="treatments">
+                    <i class="fas fa-spa"></i>
+                    <span>Treatments</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Content -->
+    <section class="services-content">
+        <div class="container">
+            <!-- Cutting Services -->
+            <div class="service-category active" id="cutting">
+                <div class="category-header reveal">
+                    <h2><i class="fas fa-cut"></i> Cutting Services</h2>
+                    <p>Expert cutting techniques for all hair types and textures.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card reveal" data-service="express-dry-cut">
+                        <div class="service-header">
+                            <h3>Express Dry Cut</h3>
+                            <div class="price-range">$75 – $90</div>
+                        </div>
+                        <p class="service-description">Quick trim or re-shaping without the cleanse & styling.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-clock"></i> Quick Service</span>
+                            <span class="feature"><i class="fas fa-scissors"></i> Precision Cutting</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Express Dry Cut">Book This Service</button>
+                    </div>
+
+                    <div class="service-card featured reveal" data-service="signature-dry-cut">
+                        <div class="featured-badge">Most Popular</div>
+                        <div class="service-header">
+                            <h3>Signature Dry Haircut</h3>
+                            <div class="price-range">$85 – $125</div>
+                        </div>
+                        <p class="service-description">For Naturally Curly or Wavy Hair. Our specialty cut designed to enhance your natural curl pattern.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-award"></i> DevaCurl Method</span>
+                            <span class="feature"><i class="fas fa-user-graduate"></i> Expert Technique</span>
+                            <span class="feature"><i class="fas fa-heart"></i> Curl Enhancement</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Signature Dry Haircut">Book This Service</button>
+                    </div>
+
+                    <div class="service-card reveal" data-service="multi-long-dry-cut">
+                        <div class="service-header">
+                            <h3>Multi/Long Dry Haircut</h3>
+                            <div class="price-range">$100 – $145</div>
+                        </div>
+                        <p class="service-description">All curls with thick, multi-textured, long, or tight coils.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-ruler"></i> Long Hair Specialist</span>
+                            <span class="feature"><i class="fas fa-layer-group"></i> Multi-Texture Expert</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Multi/Long Dry Haircut">Book This Service</button>
+                    </div>
+
+                    <div class="service-card reveal" data-service="straight-wet-cut">
+                        <div class="service-header">
+                            <h3>Straight Wet Haircut</h3>
+                            <div class="price-range">$75 – $110</div>
+                        </div>
+                        <p class="service-description">Traditional wet cutting technique for straight hair textures.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-water"></i> Wet Cutting</span>
+                            <span class="feature"><i class="fas fa-straightener"></i> Straight Hair</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Straight Wet Haircut">Book This Service</button>
+                    </div>
+
+                    <div class="service-card reveal" data-service="short-haircut">
+                        <div class="service-header">
+                            <h3>Short Haircut</h3>
+                            <div class="price-range">$75 – $85</div>
+                        </div>
+                        <p class="service-description">Specialized cutting for short hairstyles and pixie cuts.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-compress"></i> Short Styles</span>
+                            <span class="feature"><i class="fas fa-star"></i> Precision Work</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Short Haircut">Book This Service</button>
+                    </div>
+
+                    <div class="service-card reveal" data-service="bang-trim">
+                        <div class="service-header">
+                            <h3>Bang Trim</h3>
+                            <div class="price-range">$20 – $25</div>
+                        </div>
+                        <p class="service-description">Simple bang trim to maintain your style between full cuts.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-zap"></i> Quick Service</span>
+                            <span class="feature"><i class="fas fa-dollar-sign"></i> Affordable</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Bang Trim">Book This Service</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Styling Services -->
+            <div class="service-category" id="styling">
+                <div class="category-header reveal">
+                    <h2><i class="fas fa-magic"></i> Styling Services</h2>
+                    <p>Professional styling for every occasion and hair type.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card reveal" data-service="blow-dry">
+                        <div class="service-header">
+                            <h3>Blow Dry</h3>
+                            <div class="price-range">$50 – $60</div>
+                        </div>
+                        <p class="service-description">Professional blow dry styling for sleek, smooth results.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-wind"></i> Professional Tools</span>
+                            <span class="feature"><i class="fas fa-sparkles"></i> Smooth Finish</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Blow Dry">Book This Service</button>
+                    </div>
+
+                    <div class="service-card reveal" data-service="natural-curl-styling">
+                        <div class="service-header">
+                            <h3>Natural Curl Styling & Transformation</h3>
+                            <div class="price-range">$40 – $50</div>
+                        </div>
+                        <p class="service-description">Enhance your natural curl pattern with expert styling techniques.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-leaf"></i> Natural Enhancement</span>
+                            <span class="feature"><i class="fas fa-sync"></i> Transformation</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Natural Curl Styling">Book This Service</button>
+                    </div>
+
+                    <div class="service-card featured reveal" data-service="special-occasion">
+                        <div class="featured-badge">Special Events</div>
+                        <div class="service-header">
+                            <h3>Special Occasion/Wedding Style</h3>
+                            <div class="price-range">$80 – $110</div>
+                        </div>
+                        <p class="service-description">Elegant styling for weddings, events, and special occasions.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-heart"></i> Wedding Ready</span>
+                            <span class="feature"><i class="fas fa-camera"></i> Photo Perfect</span>
+                            <span class="feature"><i class="fas fa-clock"></i> Long-Lasting</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Special Occasion Style">Book This Service</button>
+                    </div>
+
+                    <div class="service-card reveal" data-service="natural-hair-styling">
+                        <div class="service-header">
+                            <h3>Natural Hair Styling</h3>
+                            <div class="price-range">Starting @ $90</div>
+                        </div>
+                        <p class="service-description">Braids, Twists, Flat Twists, Two-Strand Twist, Locs. (Call to book)</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-phone"></i> Call to Book</span>
+                            <span class="feature"><i class="fas fa-hands"></i> Protective Styles</span>
+                            <span class="feature"><i class="fas fa-crown"></i> Cultural Styles</span>
+                        </div>
+                        <button class="book-service-btn btn btn-outline" data-service="Natural Hair Styling">Call to Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coloring Services -->
+            <div class="service-category" id="coloring">
+                <div class="category-header reveal">
+                    <h2><i class="fas fa-palette"></i> Coloring Services</h2>
+                    <p>Professional coloring services using premium Goldwell products.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card reveal" data-service="all-over-color">
+                        <div class="service-header">
+                            <h3>All Over Color Only</h3>
+                            <div class="price-range">$90 – $130</div>
+                        </div>
+                        <p class="service-description">One process color application for complete color transformation.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-palette"></i> Goldwell Color</span>
+                            <span class="feature"><i class="fas fa-sync"></i> Complete Coverage</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="All Over Color">Book This Service</button>
+                    </div>
+
+                    <div class="service-card reveal" data-service="regrowth-only">
+                        <div class="service-header">
+                            <h3>Single Process Regrowth ONLY</h3>
+                            <div class="price-range">$80 – $100</div>
+                        </div>
+                        <p class="service-description">No glaze/refresh, roots only. Perfect for maintaining your color.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-seedling"></i> Root Touch-Up</span>
+                            <span class="feature"><i class="fas fa-dollar-sign"></i> Maintenance</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Regrowth Color">Book This Service</button>
+                    </div>
+
+                    <div class="service-card featured reveal" data-service="pintura-partial">
+                        <div class="featured-badge">Signature Technique</div>
+                        <div class="service-header">
+                            <h3>Pintura Highlighting/Balayage Partial</h3>
+                            <div class="price-range">Starting @ $145</div>
+                        </div>
+                        <p class="service-description">Hair painting technique specifically designed for curly hair.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-brush"></i> Hand-Painted</span>
+                            <span class="feature"><i class="fas fa-certificate"></i> Pintura Method</span>
+                            <span class="feature"><i class="fas fa-leaf"></i> Curl-Friendly</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Pintura Partial">Book This Service</button>
+                    </div>
+
+                    <div class="service-card featured reveal" data-service="pintura-full">
+                        <div class="featured-badge">Most Dramatic</div>
+                        <div class="service-header">
+                            <h3>Pintura Highlighting/Balayage Full</h3>
+                            <div class="price-range">Starting @ $205</div>
+                        </div>
+                        <p class="service-description">Complete hair painting transformation for maximum impact.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-star"></i> Full Coverage</span>
+                            <span class="feature"><i class="fas fa-brush"></i> Hair Painting</span>
+                            <span class="feature"><i class="fas fa-magic"></i> Dramatic Results</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Pintura Full">Book This Service</button>
+                    </div>
+
+                    <div class="service-card reveal" data-service="fashion-coloring">
+                        <div class="service-header">
+                            <h3>Fashion Coloring</h3>
+                            <div class="price-range">Starting @ $155</div>
+                        </div>
+                        <p class="service-description">For fun vibrant or alternative looks. Express your creativity!</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-rainbow"></i> Vibrant Colors</span>
+                            <span class="feature"><i class="fas fa-bolt"></i> Creative Looks</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Fashion Coloring">Book This Service</button>
+                    </div>
+
+                    <div class="service-card reveal" data-service="foil-highlighting">
+                        <div class="service-header">
+                            <h3>Foil Highlighting</h3>
+                            <div class="price-range">Starting @ $135</div>
+                        </div>
+                        <p class="service-description">Traditional foil highlighting from partial to full coverage.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-layer-group"></i> Partial to Full</span>
+                            <span class="feature"><i class="fas fa-certificate"></i> Traditional Method</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Foil Highlighting">Book This Service</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Treatment Services -->
+            <div class="service-category" id="treatments">
+                <div class="category-header reveal">
+                    <div class="category-header reveal">
+                    <h2><i class="fas fa-spa"></i> Treatment Services</h2>
+                    <p>Restorative treatments to maintain healthy, beautiful hair.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card featured reveal" data-service="steam-treatment">
+                        <div class="featured-badge">Luxury Treatment</div>
+                        <div class="service-header">
+                            <h3>Conditioning Steam Treatment</h3>
+                            <div class="price-range">$60.00</div>
+                        </div>
+                        <p class="service-description">Steaming enhances your hair and scalp's overall health, promoting blood circulation to the scalp and the production of your natural oils. This high retention of moisture helps your curl's elasticity and shine, leaving your hair without frizz and with a silky finish.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-heart"></i> Scalp Health</span>
+                            <span class="feature"><i class="fas fa-tint"></i> Natural Oils</span>
+                            <span class="feature"><i class="fas fa-sparkles"></i> Frizz-Free</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Steam Treatment">Book This Service</button>
+                    </div>
+
+                    <div class="service-card reveal" data-service="deep-conditioning">
+                        <div class="service-header">
+                            <h3>Deep Conditioning Treatment</h3>
+                            <div class="price-range">$45 – $55</div>
+                        </div>
+                        <p class="service-description">A stylist will consult with you about your hair concerns and recommend the best treatment from our selection, which may include CURLBOND Re-Coiling line, Innersense Hydrating Mask, Detox Mask, and K18 Pro Mask. We may also use the True Enlightenment Scalp Scrub if necessary.</p>
+                        <div class="service-features">
+                            <span class="feature"><i class="fas fa-user-md"></i> Custom Consultation</span>
+                            <span class="feature"><i class="fas fa-leaf"></i> Premium Products</span>
+                            <span class="feature"><i class="fas fa-refresh"></i> Hair Repair</span>
+                        </div>
+                        <button class="book-service-btn btn btn-primary" data-service="Deep Conditioning">Book This Service</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Policy Section -->
+    <section class="contact-policy-section">
+        <div class="container">
+            <div class="contact-policy-grid">
+                <div class="contact-info reveal">
+                    <h3>Questions About Our Services?</h3>
+                    <p>If you have any questions about our services or pricing, please feel free to reach out to us.</p>
+                    <div class="contact-methods">
+                        <a href="mailto:info@shanhair.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@shanhair.com</span>
+                        </a>
+                        <a href="tel:+16173750673" class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <span>(617) 375-0673</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="policy-info reveal">
+                    <h3>Cancellation Policy</h3>
+                    <p>We understand that sometimes plans change. Please review our cancellation policy to ensure a smooth booking experience.</p>
+                    <a href="#" class="policy-link btn btn-outline">Read Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content text-center reveal">
+                <h2>Ready to Book Your Service?</h2>
+                <p>Choose from our wide range of professional hair services and experience the Shan Hair difference.</p>
+                <div class="cta-buttons">
+                    <a href="#booking" class="btn btn-primary btn-lg">Book Appointment</a>
+                    <a href="about-us.html" class="btn btn-outline btn-lg">Meet Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <h3>Book Your Service</h3>
+                <form id="service-booking-form" class="booking-form">
+                    <div class="form-group">
+                        <label for="selected-service">Selected Service</label>
+                        <input type="text" id="selected-service" name="service" readonly>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-first-name">First Name *</label>
+                            <input type="text" id="booking-first-name" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-last-name">Last Name *</label>
+                            <input type="text" id="booking-last-name" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-email">Email *</label>
+                            <input type="email" id="booking-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-phone">Phone *</label>
+                            <input type="tel" id="booking-phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="preferred-stylist">Preferred Stylist</label>
+                        <select id="preferred-stylist" name="stylist">
+                            <option value="">No Preference</option>
+                            <option value="shan">Shan Casey</option>
+                            <option value="kiki">Kiki Carter</option>
+                            <option value="caitlyn">Caitlyn Roney</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="preferred-date">Preferred Date</label>
+                            <input type="date" id="preferred-date" name="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="preferred-time">Preferred Time</label>
+                            <select id="preferred-time" name="time">
+                                <option value="">Select Time</option>
+                                <option value="9:00 AM">9:00 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="1:00 PM">1:00 PM</option>
+                                <option value="2:00 PM">2:00 PM</option>
+                                <option value="3:00 PM">3:00 PM</option>
+                                <option value="4:00 PM">4:00 PM</option>
+                                <option value="5:00 PM">5:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests or Notes</label>
+                        <textarea id="special-requests" name="notes" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <span class="btn-text">Book Appointment</span>
+                        <span class="loading-spinner" style="display: none;"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="assets/img/logo.svg" alt="Shan Hair Salon" width="120" height="40">
+                    </div>
+                    <p>Premium hair salon specializing in curly hair, cutting-edge techniques, and personalized service.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#cutting">Cutting</a></li>
+                        <li><a href="services.html#styling">Styling</a></li>
+                        <li><a href="services.html#coloring">Coloring</a></li>
+                        <li><a href="services.html#treatments">Treatments</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (617) 375-0673</p>
+                        <p><i class="fas fa-envelope"></i> info@shanhair.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Boston, MA</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shan Hair Salon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/services.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "Shan Hair - Curly Hair Artistry",
+  "short_name": "Shan Hair",
+  "description": "Boston's premier curly hair salon specializing in cuts, color, and curl care",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1b2a38",
+  "theme_color": "#d06b1f",
+  "icons": [
+    {
+      "src": "assets/img/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["beauty", "lifestyle"],
+  "lang": "en",
+  "dir": "ltr",
+  "orientation": "portrait-primary"
+}

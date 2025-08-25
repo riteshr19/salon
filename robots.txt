@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shanhair.com/sitemap.xml
+
+# Block access to sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: *.pdf$
+
+# Allow important files for SEO
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/

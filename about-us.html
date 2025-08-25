@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Team - Shan Hair Salon</title>
+    <meta name="description" content="Meet our expert stylists - Shan, Kiki, and Caitlyn. Over 50 years of combined experience in curly hair, cutting, and coloring.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#d4af37">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/img/logo.svg" alt="Shan Hair Salon" width="120" height="40">
+                </div>
+                
+                <nav class="site-nav" role="navigation" aria-label="Main Navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html" class="active">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact" class="btn btn-secondary">Book Now</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">About Our Team</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content reveal">
+                <h1>Meet Our Expert Stylists</h1>
+                <p class="hero-subtitle">Over 50 years of combined experience in transforming curls, creating stunning cuts, and mastering the art of color.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="our-team">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2>Our Stylists</h2>
+                <p>Meet the talented team behind Shan Hair's exceptional service and artistry.</p>
+            </div>
+
+            <div class="stylists-grid">
+                <!-- Shan Casey -->
+                <div class="stylist-card reveal" data-stylist="shan">
+                    <div class="stylist-image">
+                        <img src="assets/img/avatar-1.jpg" alt="Shan Casey - Owner & Master Stylist" loading="lazy">
+                        <div class="stylist-overlay">
+                            <button class="view-details-btn" data-stylist="shan">View Details</button>
+                        </div>
+                    </div>
+                    <div class="stylist-info">
+                        <h3>Shan Casey</h3>
+                        <p class="stylist-title">Stylist & Owner</p>
+                        <p class="experience">29+ Years Experience</p>
+                        <div class="specialties">
+                            <span class="specialty">DevaCurl Educator</span>
+                            <span class="specialty">Dry Cutting Expert</span>
+                            <span class="specialty">Goldwell Color</span>
+                        </div>
+                        <div class="stylist-contact-info">
+                            <a href="mailto:info@shanhair.com" class="email-link">
+                                <i class="fas fa-envelope"></i> info@shanhair.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kiki Carter -->
+                <div class="stylist-card reveal" data-stylist="kiki">
+                    <div class="stylist-image">
+                        <img src="assets/img/avatar-2.jpg" alt="Kiki Carter - Advanced Stylist" loading="lazy">
+                        <div class="stylist-overlay">
+                            <button class="view-details-btn" data-stylist="kiki">View Details</button>
+                        </div>
+                    </div>
+                    <div class="stylist-info">
+                        <h3>Kiki Carter</h3>
+                        <p class="stylist-title">Advanced Stylist</p>
+                        <p class="experience">20+ Years Experience</p>
+                        <div class="specialties">
+                            <span class="specialty">Goldwell Master Colorist</span>
+                            <span class="specialty">DevaCurl Certified</span>
+                            <span class="specialty">RËZO Cutting</span>
+                        </div>
+                        <div class="stylist-contact-info">
+                            <a href="mailto:kikic@shanhair.com" class="email-link">
+                                <i class="fas fa-envelope"></i> kikic@shanhair.com
+                            </a>
+                            <a href="#booking" class="book-btn btn btn-primary btn-sm">Book with Kiki</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caitlyn Roney -->
+                <div class="stylist-card reveal" data-stylist="caitlyn">
+                    <div class="stylist-image">
+                        <img src="assets/img/avatar-3.jpg" alt="Caitlyn Roney - Stylist & Colorist" loading="lazy">
+                        <div class="stylist-overlay">
+                            <button class="view-details-btn" data-stylist="caitlyn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="stylist-info">
+                        <h3>Caitlyn Roney</h3>
+                        <p class="stylist-title">Stylist & Colorist</p>
+                        <p class="experience">Toni & Guy Graduate</p>
+                        <div class="specialties">
+                            <span class="specialty">All Hair Textures</span>
+                            <span class="specialty">Cutting & Coloring</span>
+                            <span class="specialty">Curly Hair Specialist</span>
+                        </div>
+                        <div class="stylist-contact-info">
+                            <a href="mailto:caitlyn@shanhair.com" class="email-link">
+                                <i class="fas fa-envelope"></i> caitlyn@shanhair.com
+                            </a>
+                            <a href="#booking" class="book-btn btn btn-primary btn-sm">Book with Caitlyn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Gallery -->
+    <section class="before-after-section">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2>Befores and Afters</h2>
+                <p>See the incredible transformations our stylists create every day.</p>
+            </div>
+            
+            <div class="before-after-gallery">
+                <div class="before-after-item reveal">
+                    <div class="before-after-images">
+                        <div class="before-image">
+                            <img src="assets/img/gallery-1.jpg" alt="Before transformation" loading="lazy">
+                            <span class="image-label">Before</span>
+                        </div>
+                        <div class="after-image">
+                            <img src="assets/img/gallery-2.jpg" alt="After transformation" loading="lazy">
+                            <span class="image-label">After</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="before-after-item reveal">
+                    <div class="before-after-images">
+                        <div class="before-image">
+                            <img src="assets/img/gallery-3.jpg" alt="Before transformation" loading="lazy">
+                            <span class="image-label">Before</span>
+                        </div>
+                        <div class="after-image">
+                            <img src="assets/img/gallery-4.jpg" alt="After transformation" loading="lazy">
+                            <span class="image-label">After</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="before-after-item reveal">
+                    <div class="before-after-images">
+                        <div class="before-image">
+                            <img src="assets/img/gallery-5.jpg" alt="Before transformation" loading="lazy">
+                            <span class="image-label">Before</span>
+                        </div>
+                        <div class="after-image">
+                            <img src="assets/img/gallery-6.jpg" alt="After transformation" loading="lazy">
+                            <span class="image-label">After</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content text-center reveal">
+                <h2>Ready to Transform Your Hair?</h2>
+                <p>Book an appointment with one of our expert stylists today and experience the Shan Hair difference.</p>
+                <div class="cta-buttons">
+                    <a href="#booking" class="btn btn-primary btn-lg">Schedule Appointment</a>
+                    <a href="services.html" class="btn btn-outline btn-lg">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stylist Detail Modals -->
+    <div class="modal" id="stylist-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="stylist-details"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="assets/img/logo.svg" alt="Shan Hair Salon" width="120" height="40">
+                    </div>
+                    <p>Premium hair salon specializing in curly hair, cutting-edge techniques, and personalized service.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#cutting">Cutting</a></li>
+                        <li><a href="services.html#styling">Styling</a></li>
+                        <li><a href="services.html#coloring">Coloring</a></li>
+                        <li><a href="services.html#treatments">Treatments</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (617) 375-0673</p>
+                        <p><i class="fas fa-envelope"></i> info@shanhair.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Boston, MA</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shan Hair Salon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/about.js"></script>
+</body>
+</html>
