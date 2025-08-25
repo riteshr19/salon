@@ -385,52 +385,273 @@
         <p>See the stunning transformations and artistry that make our clients feel confident and beautiful.</p>
       </div>
       
-      <!-- Gallery filters -->
-      <div class="gallery-filters reveal">
-        <button class="filter-btn active" data-filter="all">All Work</button>
-        <button class="filter-btn" data-filter="cuts">Cuts</button>
-        <button class="filter-btn" data-filter="color">Color</button>
-        <button class="filter-btn" data-filter="curls">Curly Styles</button>
-        <button class="filter-btn" data-filter="transformations">Transformations</button>
+      <!-- Enhanced gallery tabs with before/after option -->
+      <div class="gallery-tabs reveal">
+        <button class="tab-btn active" data-tab="portfolio">Portfolio</button>
+        <button class="tab-btn" data-tab="before-after">Before & After</button>
+        <button class="tab-btn" data-tab="process">Our Process</button>
+      </div>
+
+      <!-- Portfolio Tab -->
+      <div class="tab-content active" data-tab="portfolio">
+        <!-- Gallery filters -->
+        <div class="gallery-filters reveal">
+          <button class="filter-btn active" data-filter="all">All Work</button>
+          <button class="filter-btn" data-filter="cuts">Cuts</button>
+          <button class="filter-btn" data-filter="color">Color</button>
+          <button class="filter-btn" data-filter="curls">Curly Styles</button>
+          <button class="filter-btn" data-filter="transformations">Transformations</button>
+        </div>
+        
+        <div class="masonry" id="gallery-grid">
+          <figure class="masonry-item reveal" data-category="cuts curls">
+            <img src="assets/img/gallery-1.jpg" alt="Beautiful curly cut transformation" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h4>Curly Layer Cut</h4>
+                <p>DevaCurl Method</p>
+              </div>
+            </div>
+          </figure>
+          <figure class="masonry-item reveal" data-category="color transformations">
+            <img src="assets/img/gallery-2.jpg" alt="Stunning color and cut makeover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h4>Pintura Highlights</h4>
+                <p>Hand-painted Color</p>
+              </div>
+            </div>
+          </figure>
+          <figure class="masonry-item reveal" data-category="curls">
+            <img src="assets/img/gallery-3.jpg" alt="Natural curl enhancement" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h4>Curl Enhancement</h4>
+                <p>Natural Texture</p>
+              </div>
+            </div>
+          </figure>
+          <figure class="masonry-item reveal" data-category="cuts">
+            <img src="assets/img/gallery-4.jpg" alt="Precision curly haircut" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h4>Precision Curly Bob</h4>
+                <p>Dry Cutting Technique</p>
+              </div>
+            </div>
+          </figure>
+          <figure class="masonry-item reveal" data-category="color">
+            <img src="assets/img/gallery-5.jpg" alt="Hand-painted color highlights" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h4>Balayage Highlights</h4>
+                <p>Custom Color Blend</p>
+              </div>
+            </div>
+          </figure>
+          <figure class="masonry-item reveal" data-category="transformations color">
+            <img src="assets/img/gallery-6.jpg" alt="Complete hair transformation" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h4>Complete Makeover</h4>
+                <p>Cut + Color + Style</p>
+              </div>
+            </div>
+          </figure>
+          <figure class="masonry-item reveal" data-category="curls cuts">
+            <img src="assets/img/gallery-7.jpg" alt="Curly bob haircut styling" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h4>Textured Bob</h4>
+                <p>Curl-Friendly Cut</p>
+              </div>
+            </div>
+          </figure>
+          <figure class="masonry-item reveal" data-category="color curls">
+            <img src="assets/img/gallery-8.jpg" alt="Colored curly hair styling" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h4>Curly Color Styling</h4>
+                <p>Vibrant Healthy Curls</p>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Before & After Tab -->
+      <div class="tab-content" data-tab="before-after">
+        <div class="before-after-grid">
+          <div class="before-after-item reveal">
+            <div class="comparison-container">
+              <div class="before-after-slider">
+                <div class="before-image">
+                  <img src="assets/img/before-1.jpg" alt="Before transformation" loading="lazy">
+                  <div class="label">Before</div>
+                </div>
+                <div class="after-image">
+                  <img src="assets/img/after-1.jpg" alt="After transformation" loading="lazy">
+                  <div class="label">After</div>
+                </div>
+                <div class="slider-handle">
+                  <div class="slider-line"></div>
+                  <div class="slider-circle">
+                    <span>←→</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="transformation-details">
+              <h4>Curl Pattern Enhancement</h4>
+              <p><strong>Services:</strong> DevaCurl Cut + Deep Conditioning</p>
+              <p><strong>Duration:</strong> 2 hours</p>
+              <p><strong>Result:</strong> Defined, bouncy curls with reduced frizz</p>
+            </div>
+          </div>
+
+          <div class="before-after-item reveal">
+            <div class="comparison-container">
+              <div class="before-after-slider">
+                <div class="before-image">
+                  <img src="assets/img/before-2.jpg" alt="Before color transformation" loading="lazy">
+                  <div class="label">Before</div>
+                </div>
+                <div class="after-image">
+                  <img src="assets/img/after-2.jpg" alt="After color transformation" loading="lazy">
+                  <div class="label">After</div>
+                </div>
+                <div class="slider-handle">
+                  <div class="slider-line"></div>
+                  <div class="slider-circle">
+                    <span>←→</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="transformation-details">
+              <h4>Complete Color Makeover</h4>
+              <p><strong>Services:</strong> Pintura Highlights + Toner + Cut</p>
+              <p><strong>Duration:</strong> 4 hours</p>
+              <p><strong>Result:</strong> Dimensional color that enhances natural curl pattern</p>
+            </div>
+          </div>
+
+          <div class="before-after-item reveal">
+            <div class="comparison-container">
+              <div class="before-after-slider">
+                <div class="before-image">
+                  <img src="assets/img/before-3.jpg" alt="Before dramatic transformation" loading="lazy">
+                  <div class="label">Before</div>
+                </div>
+                <div class="after-image">
+                  <img src="assets/img/after-3.jpg" alt="After dramatic transformation" loading="lazy">
+                  <div class="label">After</div>
+                </div>
+                <div class="slider-handle">
+                  <div class="slider-line"></div>
+                  <div class="slider-circle">
+                    <span>←→</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="transformation-details">
+              <h4>Dramatic Style Change</h4>
+              <p><strong>Services:</strong> Transformative Cut + Color + Treatment</p>
+              <p><strong>Duration:</strong> 5 hours</p>
+              <p><strong>Result:</strong> Bold new look with healthy, manageable curls</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Process Tab -->
+      <div class="tab-content" data-tab="process">
+        <div class="process-steps">
+          <div class="process-step reveal">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Consultation & Analysis</h4>
+              <p>We begin with a detailed consultation to understand your hair history, lifestyle, and goals. Our experts analyze your curl pattern, porosity, and density to create a personalized plan.</p>
+              <div class="process-features">
+                <span class="feature">✓ Hair Analysis</span>
+                <span class="feature">✓ Lifestyle Assessment</span>
+                <span class="feature">✓ Goal Setting</span>
+              </div>
+            </div>
+            <div class="step-image">
+              <img src="assets/img/process-1.jpg" alt="Consultation process" loading="lazy">
+            </div>
+          </div>
+
+          <div class="process-step reveal">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Custom Treatment Plan</h4>
+              <p>Based on your consultation, we develop a customized treatment plan that may include deep conditioning, protein treatments, or scalp therapy to prepare your hair for the transformation.</p>
+              <div class="process-features">
+                <span class="feature">✓ Custom Formulation</span>
+                <span class="feature">✓ Hair Health Focus</span>
+                <span class="feature">✓ Preparation Treatments</span>
+              </div>
+            </div>
+            <div class="step-image">
+              <img src="assets/img/process-2.jpg" alt="Treatment application" loading="lazy">
+            </div>
+          </div>
+
+          <div class="process-step reveal">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Precision Cutting & Styling</h4>
+              <p>Using the DevaCurl dry cutting method, we sculpt your curls to enhance their natural pattern while creating the perfect shape for your face and lifestyle.</p>
+              <div class="process-features">
+                <span class="feature">✓ DevaCurl Method</span>
+                <span class="feature">✓ Curl-by-Curl Cutting</span>
+                <span class="feature">✓ Shape Optimization</span>
+              </div>
+            </div>
+            <div class="step-image">
+              <img src="assets/img/process-3.jpg" alt="Cutting process" loading="lazy">
+            </div>
+          </div>
+
+          <div class="process-step reveal">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Education & Home Care</h4>
+              <p>We finish with personalized education on how to maintain your new look at home, including product recommendations and styling techniques tailored to your routine.</p>
+              <div class="process-features">
+                <span class="feature">✓ Styling Education</span>
+                <span class="feature">✓ Product Guidance</span>
+                <span class="feature">✓ Follow-up Support</span>
+              </div>
+            </div>
+            <div class="step-image">
+              <img src="assets/img/process-4.jpg" alt="Education session" loading="lazy">
+            </div>
+          </div>
+        </div>
       </div>
       
-      <div class="masonry" id="gallery-grid">
-        <figure class="masonry-item reveal" data-category="cuts curls">
-          <img src="assets/img/gallery-1.jpg" alt="Beautiful curly cut transformation" loading="lazy" />
-        </figure>
-        <figure class="masonry-item reveal" data-category="color transformations">
-          <img src="assets/img/gallery-2.jpg" alt="Stunning color and cut makeover" loading="lazy" />
-        </figure>
-        <figure class="masonry-item reveal" data-category="curls">
-          <img src="assets/img/gallery-3.jpg" alt="Natural curl enhancement" loading="lazy" />
-        </figure>
-        <figure class="masonry-item reveal" data-category="cuts">
-          <img src="assets/img/gallery-4.jpg" alt="Precision curly haircut" loading="lazy" />
-        </figure>
-        <figure class="masonry-item reveal" data-category="color">
-          <img src="assets/img/gallery-5.jpg" alt="Hand-painted color highlights" loading="lazy" />
-        </figure>
-        <figure class="masonry-item reveal" data-category="transformations color">
-          <img src="assets/img/gallery-6.jpg" alt="Complete hair transformation" loading="lazy" />
-        </figure>
-        <figure class="masonry-item reveal" data-category="curls cuts">
-          <img src="assets/img/gallery-7.jpg" alt="Curly bob haircut styling" loading="lazy" />
-        </figure>
-        <figure class="masonry-item reveal" data-category="color curls">
-          <img src="assets/img/gallery-8.jpg" alt="Colored curly hair styling" loading="lazy" />
-        </figure>
-      </div>
-      
-      <!-- Load more button -->
+      <!-- Load more button for portfolio -->
       <div style="text-align: center; margin-top: 3rem;">
         <button class="btn btn-outline" id="load-more-gallery">View More Work</button>
       </div>
     </div>
     
-    <!-- Lightbox -->
+    <!-- Enhanced Lightbox -->
     <div class="lightbox" id="lightbox">
       <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
-      <img class="lightbox-content" src="" alt="" />
+      <div class="lightbox-content-wrapper">
+        <img class="lightbox-content" src="" alt="" />
+        <div class="lightbox-info">
+          <h4 class="lightbox-title"></h4>
+          <p class="lightbox-description"></p>
+        </div>
+      </div>
+      <button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>
+      <button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>
     </div>
     
     <div class="wave-divider bottom" aria-hidden="true">
