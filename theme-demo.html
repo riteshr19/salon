@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shan Hair Salon - Enhanced Theme Demo</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/theme-toggle.css">
+    <link rel="stylesheet" href="assets/css/modern-components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body data-default-theme="auto">
+    <div class="container" style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+        <header class="text-center mb-4">
+            <h1 class="animate-fade-in-down">Shan Hair Salon - Modern Theme Demo</h1>
+            <p class="animate-fade-in-up" style="animation-delay: 0.2s;">Experience our enhanced WordPress theme with modern UI components and dark/light mode</p>
+        </header>
+
+        <!-- Theme Toggle Demo -->
+        <section class="mb-5">
+            <h2 class="scroll-reveal">Theme Toggle System</h2>
+            <p class="scroll-reveal">The theme toggle button appears on the right side of the screen. It cycles through light → dark → auto modes.</p>
+            <div class="alert alert-info scroll-reveal">
+                <i class="fas fa-info-circle alert-icon"></i>
+                <div class="alert-content">
+                    <div class="alert-title">Theme Features</div>
+                    <div class="alert-description">Auto mode follows your system preference, manual modes override it. Your choice is saved locally.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Button Components -->
+        <section class="mb-5">
+            <h2 class="scroll-reveal">Modern Button Components</h2>
+            <div class="stagger-animation" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                <button class="btn btn-primary hover-shine btn-ripple">
+                    <i class="fas fa-calendar"></i>
+                    Book Appointment
+                </button>
+                <button class="btn btn-secondary hover-lift">
+                    <i class="fas fa-info"></i>
+                    Learn More
+                </button>
+                <button class="btn btn-outline hover-scale">
+                    <i class="fas fa-cut"></i>
+                    Services
+                </button>
+                <button class="btn btn-ghost">
+                    <i class="fas fa-phone"></i>
+                    Contact
+                </button>
+                <button class="btn btn-primary btn-loading">
+                    Loading...
+                </button>
+            </div>
+        </section>
+
+        <!-- Card Components -->
+        <section class="mb-5">
+            <h2 class="scroll-reveal">Enhanced Card Components</h2>
+            <div class="stagger-animation" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">Hair Cut & Style</h3>
+                        <p class="card-description">Professional cutting and styling for all hair types</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Our expert stylists specialize in precision cuts that enhance your natural hair texture and face shape.</p>
+                        <div class="progress" style="margin: 1rem 0;">
+                            <div class="progress-bar" style="width: 85%;"></div>
+                        </div>
+                        <span class="badge">Popular</span>
+                    </div>
+                    <div class="card-footer">
+                        <span style="font-weight: 600; color: var(--orange, #d06b1f);">From $75</span>
+                        <button class="btn btn-primary btn-sm">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">Color Services</h3>
+                        <p class="card-description">Professional coloring and highlighting</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Transform your look with our advanced coloring techniques and premium products.</p>
+                        <div class="progress" style="margin: 1rem 0;">
+                            <div class="progress-bar" style="width: 90%;"></div>
+                        </div>
+                        <span class="badge badge-secondary">Premium</span>
+                    </div>
+                    <div class="card-footer">
+                        <span style="font-weight: 600; color: var(--orange, #d06b1f);">From $120</span>
+                        <button class="btn btn-outline btn-sm">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">Treatments</h3>
+                        <p class="card-description">Restorative and conditioning treatments</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Nourish and repair your hair with our luxurious treatment options.</p>
+                        <div class="progress" style="margin: 1rem 0;">
+                            <div class="progress-bar" style="width: 70%;"></div>
+                        </div>
+                        <span class="badge badge-outline">New</span>
+                    </div>
+                    <div class="card-footer">
+                        <span style="font-weight: 600; color: var(--orange, #d06b1f);">From $60</span>
+                        <button class="btn btn-ghost btn-sm">Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Forms -->
+        <section class="mb-5">
+            <h2 class="scroll-reveal">Modern Form Components</h2>
+            <div class="card" style="max-width: 600px; margin-top: 1rem;">
+                <div class="card-header">
+                    <h3 class="card-title">Book Your Appointment</h3>
+                    <p class="card-description">Fill out the form below and we'll get back to you shortly</p>
+                </div>
+                <form class="card-content">
+                    <div class="floating-label-wrapper">
+                        <input type="text" id="name" class="form-input focus-ring" required>
+                        <label for="name" class="floating-label">Your Name</label>
+                    </div>
+
+                    <div class="floating-label-wrapper">
+                        <input type="email" id="email" class="form-input focus-ring" required>
+                        <label for="email" class="floating-label">Email Address</label>
+                    </div>
+
+                    <div class="floating-label-wrapper">
+                        <input type="tel" id="phone" class="form-input focus-ring">
+                        <label for="phone" class="floating-label">Phone Number</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="service">Preferred Service</label>
+                        <select id="service" class="form-input form-select focus-ring">
+                            <option value="">Select a service...</option>
+                            <option value="cut">Hair Cut & Style</option>
+                            <option value="color">Color Services</option>
+                            <option value="treatment">Hair Treatment</option>
+                            <option value="consultation">Consultation</option>
+                        </select>
+                    </div>
+
+                    <div class="floating-label-wrapper">
+                        <textarea id="message" class="form-input form-textarea focus-ring" rows="4"></textarea>
+                        <label for="message" class="floating-label">Additional Notes</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-ripple" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Request
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Alerts and Notifications -->
+        <section class="mb-5">
+            <h2 class="scroll-reveal">Alert Components</h2>
+            <div class="stagger-animation" style="margin-top: 1rem;">
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle alert-icon"></i>
+                    <div class="alert-content">
+                        <div class="alert-title">Appointment Confirmed!</div>
+                        <div class="alert-description">Your appointment has been successfully scheduled for tomorrow at 2:00 PM.</div>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle alert-icon"></i>
+                    <div class="alert-content">
+                        <div class="alert-title">Reminder</div>
+                        <div class="alert-description">Please arrive 15 minutes early for your appointment and bring a valid ID.</div>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle alert-icon"></i>
+                    <div class="alert-content">
+                        <div class="alert-title">New Feature</div>
+                        <div class="alert-description">You can now book appointments online 24/7 through our enhanced booking system.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animation Demos -->
+        <section class="mb-5">
+            <h2 class="scroll-reveal">Animation Examples</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div class="card hover-lift animate-float" style="text-align: center; padding: 2rem;">
+                    <i class="fas fa-cut" style="font-size: 2rem; color: var(--orange, #d06b1f); margin-bottom: 1rem;"></i>
+                    <h4>Float Animation</h4>
+                    <p>Continuous floating effect</p>
+                </div>
+                
+                <div class="card hover-scale animate-pulse" style="text-align: center; padding: 2rem;">
+                    <i class="fas fa-heart" style="font-size: 2rem; color: var(--orange, #d06b1f); margin-bottom: 1rem;"></i>
+                    <h4>Pulse Animation</h4>
+                    <p>Gentle pulsing effect</p>
+                </div>
+                
+                <div class="card hover-glow" style="text-align: center; padding: 2rem;">
+                    <i class="fas fa-star" style="font-size: 2rem; color: var(--orange, #d06b1f); margin-bottom: 1rem;"></i>
+                    <h4>Glow on Hover</h4>
+                    <p>Hover for glow effect</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading States -->
+        <section class="mb-5">
+            <h2 class="scroll-reveal">Loading Components</h2>
+            <div style="display: flex; gap: 2rem; align-items: center; margin-top: 1rem;">
+                <div class="loading-spinner"></div>
+                <div class="loading-dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text" style="width: 60%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center" style="margin-top: 4rem; padding: 2rem; border-top: 1px solid var(--border, #e2e8f0);">
+            <p style="color: var(--text-muted, #64748b);">
+                <strong>Enhanced WordPress Theme for Shan Hair Salon</strong><br>
+                Modern UI components, dark/light mode, and extensive customization options
+            </p>
+        </footer>
+    </div>
+
+    <script src="assets/js/theme-manager.js"></script>
+    <script>
+        // Add some interactive functionality for the demo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers for buttons
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if (this.textContent.includes('Loading')) return;
+                    
+                    // Show notification for demo
+                    setTimeout(() => {
+                        if (window.themeManager) {
+                            window.themeManager.showNotification('✨ Button clicked! This is a demo.');
+                        }
+                    }, 100);
+                });
+            });
+
+            // Demo form validation
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (window.themeManager) {
+                        window.themeManager.showNotification('📝 Form submitted! (Demo mode)');
+                    }
+                });
+            }
+
+            console.log('🎨 Shan Hair enhanced theme demo loaded successfully!');
+        });
+    </script>
+</body>
+</html>
