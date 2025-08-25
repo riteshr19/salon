@@ -452,7 +452,273 @@ document.addEventListener('DOMContentLoaded', () => {
   // Console message for developers
   console.log('🌟 Shan Hair website loaded successfully!');
   console.log('Built with modern web standards and accessibility in mind.');
+  
+  // Initialize enhanced booking form
+  initializeEnhancedBookingForm();
 });
+
+// Enhanced Multi-Step Booking Form
+function initializeEnhancedBookingForm() {
+  const form = document.getElementById('enhanced-booking-form');
+  if (!form) return;
+  
+  let currentStep = 1;
+  const totalSteps = 3;
+  
+  // Service pricing data
+  const servicePrices = {
+    'signature-cut': 95,
+    'color-highlights': 150,
+    'gloss-treatment': 75,
+    'scalp-treatment': 65
+  };
+  
+  const serviceDurations = {
+    'signature-cut': 90,
+    'color-highlights': 150,
+    'gloss-treatment': 45,
+    'scalp-treatment': 60
+  };
+  
+  // Initialize form
+  setupStepNavigation();
+  setupServiceSelection();
+  setupFormValidation();
+  
+  function setupStepNavigation() {
+    // Next step buttons
+    document.querySelectorAll('.next-step').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (validateCurrentStep()) {
+          nextStep();
+        }
+      });
+    });
+    
+    // Previous step buttons
+    document.querySelectorAll('.prev-step').forEach(btn => {
+      btn.addEventListener('click', prevStep);
+    });
+    
+    // Form submission
+    form.addEventListener('submit', handleFormSubmission);
+  }
+  
+  function setupServiceSelection() {
+    const serviceOptions = document.querySelectorAll('input[name="services"]');
+    const nextButton = document.querySelector('.next-step');
+    const priceEstimate = document.getElementById('price-estimate');
+    
+    serviceOptions.forEach(option => {
+      option.addEventListener('change', updatePriceEstimate);
+    });
+    
+    function updatePriceEstimate() {
+      const selectedServices = Array.from(serviceOptions)
+        .filter(option => option.checked)
+        .map(option => option.value);
+      
+      if (selectedServices.length === 0) {
+        priceEstimate.textContent = 'Select services';
+        nextButton.disabled = true;
+        return;
+      }
+      
+      const totalPrice = selectedServices.reduce((total, service) => {
+        return total + servicePrices[service];
+      }, 0);
+      
+      priceEstimate.textContent = `$${totalPrice}+`;
+      nextButton.disabled = false;
+    }
+  }
+  
+  function setupFormValidation() {
+    // Real-time validation for required fields
+    const requiredFields = form.querySelectorAll('input[required], select[required]');
+    
+    requiredFields.forEach(field => {
+      field.addEventListener('blur', () => validateField(field));
+      field.addEventListener('input', () => clearFieldError(field));
+    });
+  }
+  
+  function validateField(field) {
+    const formGroup = field.closest('.form-group');
+    const errorMessage = formGroup.querySelector('.error-message');
+    
+    if (!field.value.trim()) {
+      formGroup.classList.add('error');
+      return false;
+    }
+    
+    if (field.type === 'email' && !isValidEmail(field.value)) {
+      formGroup.classList.add('error');
+      return false;
+    }
+    
+    formGroup.classList.remove('error');
+    return true;
+  }
+  
+  function clearFieldError(field) {
+    const formGroup = field.closest('.form-group');
+    formGroup.classList.remove('error');
+  }
+  
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+  
+  function validateCurrentStep() {
+    const currentStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+    
+    if (currentStep === 1) {
+      // Validate service selection
+      const selectedServices = document.querySelectorAll('input[name="services"]:checked');
+      return selectedServices.length > 0;
+    }
+    
+    if (currentStep === 2) {
+      // Validate personal details
+      const requiredFields = currentStepElement.querySelectorAll('input[required]');
+      return Array.from(requiredFields).every(field => validateField(field));
+    }
+    
+    if (currentStep === 3) {
+      // Validate scheduling
+      const dateField = document.getElementById('preferredDate');
+      const timeField = document.getElementById('preferredTime');
+      return validateField(dateField) && validateField(timeField);
+    }
+    
+    return true;
+  }
+  
+  function nextStep() {
+    if (currentStep < totalSteps) {
+      updateStep(currentStep + 1);
+    }
+  }
+  
+  function prevStep() {
+    if (currentStep > 1) {
+      updateStep(currentStep - 1);
+    }
+  }
+  
+  function updateStep(step) {
+    // Hide current step
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('active');
+    document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('active');
+    
+    // Mark previous steps as completed
+    if (step > currentStep) {
+      document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('completed');
+    } else {
+      document.querySelector(`.progress-step[data-step="${step}"]`).classList.remove('completed');
+    }
+    
+    // Show new step
+    currentStep = step;
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+    document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('active');
+    
+    // Update booking summary for final step
+    if (currentStep === 3) {
+      updateBookingSummary();
+    }
+    
+    // Scroll to top of form
+    document.querySelector('.booking-container').scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'start' 
+    });
+  }
+  
+  function updateBookingSummary() {
+    const selectedServices = Array.from(document.querySelectorAll('input[name="services"]:checked'));
+    const summaryServices = document.getElementById('summary-services');
+    const summaryPrice = document.getElementById('summary-price');
+    const summaryDuration = document.getElementById('summary-duration');
+    
+    if (selectedServices.length === 0) return;
+    
+    // Update services list
+    const serviceNames = selectedServices.map(service => {
+      const card = service.closest('.service-card-option');
+      return card.querySelector('h5').textContent;
+    });
+    summaryServices.innerHTML = `<span>Services:</span><span>${serviceNames.join(', ')}</span>`;
+    
+    // Update total price
+    const totalPrice = selectedServices.reduce((total, service) => {
+      return total + servicePrices[service.value];
+    }, 0);
+    summaryPrice.innerHTML = `<span>Estimated Total:</span><span>$${totalPrice}+</span>`;
+    
+    // Update total duration
+    const totalDuration = selectedServices.reduce((total, service) => {
+      return total + serviceDurations[service.value];
+    }, 0);
+    summaryDuration.innerHTML = `<span>Duration:</span><span>${Math.floor(totalDuration / 60)}h ${totalDuration % 60}min</span>`;
+  }
+  
+  function handleFormSubmission(e) {
+    e.preventDefault();
+    
+    if (!validateCurrentStep()) return;
+    
+    // Show loading state
+    const submitButton = form.querySelector('button[type="submit"]');
+    const buttonText = submitButton.querySelector('.btn-text');
+    const spinner = submitButton.querySelector('.loading-spinner');
+    
+    buttonText.style.display = 'none';
+    spinner.classList.remove('hidden');
+    submitButton.disabled = true;
+    
+    // Simulate form submission
+    setTimeout(() => {
+      // Hide form and show success message
+      form.style.display = 'none';
+      document.getElementById('booking-success').classList.remove('hidden');
+      
+      // Track conversion event (if analytics is setup)
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'booking_submission', {
+          event_category: 'conversion',
+          event_label: 'enhanced_booking_form'
+        });
+      }
+    }, 2000);
+  }
+}
+
+// Global function to reset booking form
+function resetBookingForm() {
+  const form = document.getElementById('enhanced-booking-form');
+  const successMessage = document.getElementById('booking-success');
+  
+  if (form && successMessage) {
+    form.reset();
+    form.style.display = 'block';
+    successMessage.classList.add('hidden');
+    
+    // Reset to first step
+    document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
+    document.querySelectorAll('.progress-step').forEach(step => {
+      step.classList.remove('active', 'completed');
+    });
+    
+    document.querySelector('.form-step[data-step="1"]').classList.add('active');
+    document.querySelector('.progress-step[data-step="1"]').classList.add('active');
+    
+    // Reset price estimate
+    document.getElementById('price-estimate').textContent = 'Select services';
+    document.querySelector('.next-step').disabled = true;
+  }
+}
 
 // Service Worker for offline functionality (optional)
 if ('serviceWorker' in navigator) {
