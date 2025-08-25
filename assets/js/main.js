@@ -411,22 +411,555 @@ class AccessibilityManager {
     }
   }
 
-  trapFocus(e, container) {
-    const focusableElements = container.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
+  }
+}
 
-    if (e.shiftKey) {
-      if (document.activeElement === firstElement) {
-        lastElement.focus();
-        e.preventDefault();
+// Counter Animation Class
+class CounterAnimations {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.setupIntersectionObserver();
+  }
+
+  setupIntersectionObserver() {
+    if (!window.IntersectionObserver) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+          this.animateCounter(entry.target);
+          entry.target.classList.add('counted');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    document.querySelectorAll('.counter').forEach(counter => {
+      observer.observe(counter);
+    });
+  }
+
+  animateCounter(element) {
+    const target = parseFloat(element.getAttribute('data-target'));
+    const isDecimal = target % 1 !== 0;
+    const duration = 2000;
+    const stepTime = 50;
+    const steps = duration / stepTime;
+    const stepValue = target / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += stepValue;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
       }
-    } else if (document.activeElement === lastElement) {
-      firstElement.focus();
-      e.preventDefault();
+      
+      if (isDecimal) {
+        element.textContent = current.toFixed(1) + '★';
+      } else {
+        element.textContent = Math.floor(current) + '+';
+      }
+    }, stepTime);
+  }
+}
+
+// Enhanced interactions class
+class EnhancedInteractions {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.setupCTATracking();
+    this.setupServiceBookingPreselection();
+    this.setupUrgencyBanner();
+    this.setupScrollAnimations();
+  }
+
+  setupCTATracking() {
+    document.querySelectorAll('[data-cta]').forEach(cta => {
+      cta.addEventListener('click', (e) => {
+        const ctaType = e.currentTarget.getAttribute('data-cta');
+        console.log(`CTA clicked: ${ctaType}`);
+        
+        // Add analytics tracking here if needed
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'cta_click', {
+            'cta_type': ctaType,
+            'page_location': window.location.href
+          });
+        }
+      });
+    });
+  }
+
+  setupServiceBookingPreselection() {
+    document.querySelectorAll('.book-service').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const service = e.currentTarget.getAttribute('data-service');
+        
+        // Scroll to booking form
+        document.getElementById('contact').scrollIntoView({
+          behavior: 'smooth'
+        });
+        
+        // Pre-select the service in the booking form after scroll
+        setTimeout(() => {
+          this.preselectService(service);
+        }, 1000);
+      });
+    });
+  }
+
+  preselectService(serviceName) {
+    const serviceCheckboxes = document.querySelectorAll('input[name="services"]');
+    serviceCheckboxes.forEach(checkbox => {
+      const label = checkbox.closest('label');
+      const serviceTitle = label.querySelector('h5');
+      if (serviceTitle && serviceTitle.textContent.includes(serviceName.split(' ')[0])) {
+        checkbox.checked = true;
+        checkbox.dispatchEvent(new Event('change'));
+      }
+    });
+  }
+
+  setupUrgencyBanner() {
+    const urgencyBanner = document.querySelector('.urgency-banner');
+    if (urgencyBanner) {
+      // Simulate dynamic slot availability
+      setInterval(() => {
+        const slots = Math.floor(Math.random() * 5) + 1;
+        const urgencyText = urgencyBanner.querySelector('.urgency-text');
+        urgencyText.textContent = `Only ${slots} slots left this week!`;
+      }, 30000); // Update every 30 seconds
     }
+  }
+
+}
+
+// Enhanced Gallery Class
+class EnhancedGallery {
+  constructor() {
+    this.currentTab = 'portfolio';
+    this.currentImageIndex = 0;
+    this.images = [];
+    this.init();
+  }
+
+  init() {
+    this.setupTabs();
+    this.setupBeforeAfterSliders();
+    this.setupLightbox();
+    this.setupFilters();
+  }
+
+  setupTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const tabId = e.target.getAttribute('data-tab');
+        
+        // Remove active class from all tabs and contents
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        
+        // Add active class to clicked tab and corresponding content
+        e.target.classList.add('active');
+        document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+        
+        this.currentTab = tabId;
+      });
+    });
+  }
+
+  setupBeforeAfterSliders() {
+    const sliders = document.querySelectorAll('.before-after-slider');
+    
+    sliders.forEach(slider => {
+      const afterImage = slider.querySelector('.after-image');
+      const handle = slider.querySelector('.slider-handle');
+      let isDragging = false;
+
+      const updateSlider = (e) => {
+        const rect = slider.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+        
+        afterImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        handle.style.left = `${percentage}%`;
+      };
+
+      slider.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        updateSlider(e);
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          updateSlider(e);
+        }
+      });
+
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      // Touch events for mobile
+      slider.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        updateSlider(e.touches[0]);
+      });
+
+      document.addEventListener('touchmove', (e) => {
+        if (isDragging) {
+          e.preventDefault();
+          updateSlider(e.touches[0]);
+        }
+      });
+
+      document.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+    });
+  }
+
+  setupLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = lightbox.querySelector('.lightbox-content');
+    const lightboxTitle = lightbox.querySelector('.lightbox-title');
+    const lightboxDescription = lightbox.querySelector('.lightbox-description');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    const prevBtn = lightbox.querySelector('.lightbox-prev');
+    const nextBtn = lightbox.querySelector('.lightbox-next');
+
+    // Collect all gallery images
+    this.images = Array.from(document.querySelectorAll('.masonry-item img')).map(img => ({
+      src: img.src,
+      alt: img.alt,
+      title: img.closest('.masonry-item').querySelector('.gallery-info h4')?.textContent || img.alt,
+      description: img.closest('.masonry-item').querySelector('.gallery-info p')?.textContent || ''
+    }));
+
+    // Open lightbox
+    document.querySelectorAll('.masonry-item').forEach((item, index) => {
+      item.addEventListener('click', () => {
+        this.currentImageIndex = index;
+        this.showLightboxImage();
+        lightbox.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close lightbox
+    const closeLightbox = () => {
+      lightbox.classList.remove('show');
+      document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Navigation
+    prevBtn.addEventListener('click', () => {
+      this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+      this.showLightboxImage();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+      this.showLightboxImage();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('show')) {
+        switch (e.key) {
+          case 'Escape':
+            closeLightbox();
+            break;
+          case 'ArrowLeft':
+            prevBtn.click();
+            break;
+          case 'ArrowRight':
+            nextBtn.click();
+            break;
+        }
+      }
+    });
+  }
+
+  showLightboxImage() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = lightbox.querySelector('.lightbox-content');
+    const lightboxTitle = lightbox.querySelector('.lightbox-title');
+    const lightboxDescription = lightbox.querySelector('.lightbox-description');
+    
+    const currentImage = this.images[this.currentImageIndex];
+    
+    lightboxContent.src = currentImage.src;
+    lightboxContent.alt = currentImage.alt;
+    lightboxTitle.textContent = currentImage.title;
+    lightboxDescription.textContent = currentImage.description;
+  }
+
+  setupFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.masonry-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const filter = e.target.getAttribute('data-filter');
+        
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        
+        // Filter items
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
+            item.style.display = 'block';
+            item.classList.add('reveal');
+          } else {
+            item.style.display = 'none';
+            item.classList.remove('reveal');
+          }
+        });
+        
+        // Re-trigger scroll reveal for visible items
+        if (window.salonComponents && window.salonComponents.scrollReveal) {
+          window.salonComponents.scrollReveal.observeElements();
+        }
+      });
+    });
+  }
+}
+
+// Service Calculator Class
+class ServiceCalculator {
+  constructor() {
+    this.services = [];
+    this.packages = {
+      'complete-makeover': {
+        services: ['signature-cut', 'color-highlights', 'scalp-treatment', 'styling-education'],
+        discount: 80,
+        name: 'Complete Curl Makeover'
+      },
+      'refresh-revive': {
+        services: ['signature-cut', 'gloss-treatment', 'styling-education'],
+        discount: 30,
+        name: 'Refresh & Revive'
+      }
+    };
+    this.init();
+  }
+
+  init() {
+    this.setupEventListeners();
+    this.updateSummary();
+  }
+
+  setupEventListeners() {
+    // Service checkboxes
+    document.querySelectorAll('.calculator-service-item input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', (e) => {
+        this.handleServiceChange(e);
+      });
+    });
+
+    // Clear button
+    const clearBtn = document.getElementById('calculator-clear-btn');
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        this.clearAll();
+      });
+    }
+
+    // Book button
+    const bookBtn = document.getElementById('calculator-book-btn');
+    if (bookBtn) {
+      bookBtn.addEventListener('click', () => {
+        this.bookSelectedServices();
+      });
+    }
+  }
+
+  handleServiceChange(e) {
+    const serviceData = {
+      id: e.target.getAttribute('data-service'),
+      price: parseInt(e.target.getAttribute('data-price')),
+      duration: parseInt(e.target.getAttribute('data-duration')),
+      name: e.target.closest('.calculator-service-item').querySelector('.service-name').textContent
+    };
+
+    if (e.target.checked) {
+      this.services.push(serviceData);
+    } else {
+      this.services = this.services.filter(service => service.id !== serviceData.id);
+    }
+
+    this.updateSummary();
+    this.updateBookButton();
+  }
+
+  updateSummary() {
+    const selectedServicesEl = document.getElementById('selected-services');
+    const subtotalEl = document.getElementById('calc-subtotal');
+    const discountEl = document.getElementById('calc-discount');
+    const totalEl = document.getElementById('calc-total');
+    const durationEl = document.getElementById('calc-duration');
+    const discountLineEl = document.getElementById('discount-line');
+    const savingsIndicatorEl = document.getElementById('savings-indicator');
+    const savingsAmountEl = document.getElementById('savings-amount');
+
+    if (this.services.length === 0) {
+      selectedServicesEl.innerHTML = '<p class="empty-state">Select services to see your estimate</p>';
+      subtotalEl.textContent = '$0';
+      discountEl.textContent = '-$0';
+      totalEl.textContent = '$0';
+      durationEl.textContent = '0 min';
+      discountLineEl.style.display = 'none';
+      savingsIndicatorEl.style.display = 'none';
+      return;
+    }
+
+    // Update selected services list
+    const servicesHTML = this.services.map(service => `
+      <div class="selected-service-item">
+        <span class="selected-service-name">${service.name}</span>
+        <span class="selected-service-price">$${service.price}</span>
+      </div>
+    `).join('');
+    selectedServicesEl.innerHTML = servicesHTML;
+
+    // Calculate totals
+    const subtotal = this.services.reduce((sum, service) => sum + service.price, 0);
+    const totalDuration = this.services.reduce((sum, service) => sum + service.duration, 0);
+    
+    // Check for package discounts
+    const discount = this.calculatePackageDiscount();
+    const total = subtotal - discount;
+
+    // Update display
+    subtotalEl.textContent = `$${subtotal}`;
+    totalEl.textContent = `$${total}`;
+    
+    // Format duration
+    const hours = Math.floor(totalDuration / 60);
+    const minutes = totalDuration % 60;
+    const durationText = hours > 0 ? `${hours}h ${minutes}m` : `${minutes} min`;
+    durationEl.textContent = durationText;
+
+    // Show/hide discount
+    if (discount > 0) {
+      discountEl.textContent = `-$${discount}`;
+      discountLineEl.style.display = 'flex';
+      savingsAmountEl.textContent = `$${discount}`;
+      savingsIndicatorEl.style.display = 'block';
+    } else {
+      discountLineEl.style.display = 'none';
+      savingsIndicatorEl.style.display = 'none';
+    }
+  }
+
+  calculatePackageDiscount() {
+    const selectedServiceIds = this.services.map(s => s.id);
+    
+    for (const [packageId, packageData] of Object.entries(this.packages)) {
+      const hasAllServices = packageData.services.every(serviceId => 
+        selectedServiceIds.includes(serviceId)
+      );
+      
+      if (hasAllServices && selectedServiceIds.length === packageData.services.length) {
+        return packageData.discount;
+      }
+    }
+    
+    return 0;
+  }
+
+  updateBookButton() {
+    const bookBtn = document.getElementById('calculator-book-btn');
+    if (bookBtn) {
+      bookBtn.disabled = this.services.length === 0;
+      
+      if (this.services.length > 0) {
+        const total = this.services.reduce((sum, service) => sum + service.price, 0) - this.calculatePackageDiscount();
+        bookBtn.textContent = `Book These Services ($${total})`;
+      } else {
+        bookBtn.textContent = 'Book These Services';
+      }
+    }
+  }
+
+  clearAll() {
+    // Uncheck all checkboxes
+    document.querySelectorAll('.calculator-service-item input[type="checkbox"]').forEach(checkbox => {
+      checkbox.checked = false;
+    });
+    
+    // Clear services array
+    this.services = [];
+    
+    // Update display
+    this.updateSummary();
+    this.updateBookButton();
+  }
+
+  bookSelectedServices() {
+    if (this.services.length === 0) return;
+
+    // Scroll to booking form
+    document.getElementById('contact').scrollIntoView({
+      behavior: 'smooth'
+    });
+
+    // Pre-select services in booking form after scroll
+    setTimeout(() => {
+      this.preselectServicesInBookingForm();
+    }, 1000);
+
+    // Track analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'service_calculator_booking', {
+        'services': this.services.map(s => s.id).join(','),
+        'total_value': this.services.reduce((sum, service) => sum + service.price, 0),
+        'discount_applied': this.calculatePackageDiscount()
+      });
+    }
+  }
+
+  preselectServicesInBookingForm() {
+    const serviceMapping = {
+      'signature-cut': 'signature-cut',
+      'color-highlights': 'color-highlights',
+      'gloss-treatment': 'gloss-treatment',
+      'scalp-treatment': 'scalp-treatment',
+      'styling-education': 'styling-education'
+    };
+
+    this.services.forEach(calculatorService => {
+      const bookingServiceValue = serviceMapping[calculatorService.id];
+      if (bookingServiceValue) {
+        const checkbox = document.querySelector(`input[name="services"][value="${bookingServiceValue}"]`);
+        if (checkbox) {
+          checkbox.checked = true;
+          checkbox.dispatchEvent(new Event('change'));
+        }
+      }
+    });
   }
 }
 
@@ -435,18 +968,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const navigation = new Navigation();
   const scrollReveal = new ScrollReveal();
   const gallery = new Gallery();
+  const enhancedGallery = new EnhancedGallery();
   const bookingForm = new BookingForm();
   const lazyLoader = new LazyLoader();
   const accessibilityManager = new AccessibilityManager();
+  const counterAnimations = new CounterAnimations();
+  const enhancedInteractions = new EnhancedInteractions();
+  const serviceCalculator = new ServiceCalculator();
   
   // Store references to prevent garbage collection
   window.salonComponents = {
     navigation,
     scrollReveal,
     gallery,
+    enhancedGallery,
     bookingForm,
     lazyLoader,
-    accessibilityManager
+    accessibilityManager,
+    counterAnimations,
+    enhancedInteractions,
+    serviceCalculator
   };
   
   // Console message for developers
