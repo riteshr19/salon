@@ -30,11 +30,15 @@ add_action('after_setup_theme', 'shan_hair_setup');
 function shan_hair_scripts() {
     // Styles
     wp_enqueue_style('shan-hair-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.0');
+    wp_enqueue_style('shan-hair-theme-toggle', get_template_directory_uri() . '/assets/css/theme-toggle.css', array(), '1.0.0');
+    wp_enqueue_style('shan-hair-modern-components', get_template_directory_uri() . '/assets/css/modern-components.css', array(), '1.0.0');
+    wp_enqueue_style('shan-hair-animations', get_template_directory_uri() . '/assets/css/animations.css', array(), '1.0.0');
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap', array(), null);
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', array(), '6.0.0');
     
     // Scripts
-    wp_enqueue_script('shan-hair-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
+    wp_enqueue_script('shan-hair-theme-manager', get_template_directory_uri() . '/assets/js/theme-manager.js', array(), '1.0.0', true);
+    wp_enqueue_script('shan-hair-main', get_template_directory_uri() . '/assets/js/main.js', array('shan-hair-theme-manager'), '1.0.0', true);
     
     // Page-specific scripts
     if (is_page_template('about-us.php') || is_page('about-us')) {
@@ -125,6 +129,206 @@ function shan_hair_customize_register($wp_customize) {
             'type' => 'url',
         ));
     }
+
+    // Theme Appearance Section
+    $wp_customize->add_section('theme_appearance', array(
+        'title' => 'Theme Appearance',
+        'priority' => 31,
+        'description' => 'Customize the visual appearance of your salon website.',
+    ));
+
+    // Primary color
+    $wp_customize->add_setting('primary_color', array(
+        'default' => '#d06b1f',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'primary_color', array(
+        'label' => 'Primary Color (Orange)',
+        'section' => 'theme_appearance',
+        'description' => 'This color is used for buttons, links, and accents.',
+    )));
+
+    // Secondary color
+    $wp_customize->add_setting('secondary_color', array(
+        'default' => '#1b2a38',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'secondary_color', array(
+        'label' => 'Secondary Color (Navy)',
+        'section' => 'theme_appearance',
+        'description' => 'Used for dark backgrounds and text.',
+    )));
+
+    // Default theme mode
+    $wp_customize->add_setting('default_theme_mode', array(
+        'default' => 'auto',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('default_theme_mode', array(
+        'label' => 'Default Theme Mode',
+        'section' => 'theme_appearance',
+        'type' => 'select',
+        'choices' => array(
+            'auto' => 'Auto (Follow System)',
+            'light' => 'Light Mode',
+            'dark' => 'Dark Mode',
+        ),
+        'description' => 'Choose the default color scheme for new visitors.',
+    ));
+
+    // Hero Section
+    $wp_customize->add_section('hero_section', array(
+        'title' => 'Hero Section',
+        'priority' => 32,
+        'description' => 'Customize the main hero section on your homepage.',
+    ));
+
+    // Hero title
+    $wp_customize->add_setting('hero_title', array(
+        'default' => 'Welcome to Shan Hair',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('hero_title', array(
+        'label' => 'Hero Title',
+        'section' => 'hero_section',
+        'type' => 'text',
+    ));
+
+    // Hero subtitle
+    $wp_customize->add_setting('hero_subtitle', array(
+        'default' => 'Brookline\'s curl experts since 2011! With 30 years of experience, Shan and our talented team specialize in bringing out the best in curls (and all hair types), offering expert cuts, color, and more in a fun, friendly, and professional atmosphere.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('hero_subtitle', array(
+        'label' => 'Hero Subtitle',
+        'section' => 'hero_section',
+        'type' => 'textarea',
+    ));
+
+    // Hero button text
+    $wp_customize->add_setting('hero_button_text', array(
+        'default' => 'Book Appointment',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('hero_button_text', array(
+        'label' => 'Hero Button Text',
+        'section' => 'hero_section',
+        'type' => 'text',
+    ));
+
+    // Hero button link
+    $wp_customize->add_setting('hero_button_link', array(
+        'default' => '#contact',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control('hero_button_link', array(
+        'label' => 'Hero Button Link',
+        'section' => 'hero_section',
+        'type' => 'url',
+        'description' => 'Where the main hero button should link to.',
+    ));
+
+    // Services Section
+    $wp_customize->add_section('services_section', array(
+        'title' => 'Services Section',
+        'priority' => 33,
+        'description' => 'Customize the services section content.',
+    ));
+
+    // Services title
+    $wp_customize->add_setting('services_title', array(
+        'default' => 'Our Premium Services',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('services_title', array(
+        'label' => 'Services Section Title',
+        'section' => 'services_section',
+        'type' => 'text',
+    ));
+
+    // Services description
+    $wp_customize->add_setting('services_description', array(
+        'default' => 'Expert services tailored to enhance your natural beauty and personal style.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('services_description', array(
+        'label' => 'Services Description',
+        'section' => 'services_section',
+        'type' => 'textarea',
+    ));
+
+    // Contact Section
+    $wp_customize->add_section('contact_section', array(
+        'title' => 'Contact & Booking',
+        'priority' => 34,
+        'description' => 'Customize contact information and booking settings.',
+    ));
+
+    // Booking form title
+    $wp_customize->add_setting('booking_form_title', array(
+        'default' => 'Book Your Appointment',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('booking_form_title', array(
+        'label' => 'Booking Form Title',
+        'section' => 'contact_section',
+        'type' => 'text',
+    ));
+
+    // Booking form description
+    $wp_customize->add_setting('booking_form_description', array(
+        'default' => 'Ready to transform your hair? Book your appointment today and let our expert stylists create the perfect look for you.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('booking_form_description', array(
+        'label' => 'Booking Form Description',
+        'section' => 'contact_section',
+        'type' => 'textarea',
+    ));
+
+    // Business hours
+    $wp_customize->add_setting('business_hours', array(
+        'default' => "Monday: 9:00 AM - 7:00 PM\nTuesday: 9:00 AM - 7:00 PM\nWednesday: 9:00 AM - 6:00 PM\nThursday: 9:00 AM - 7:00 PM\nFriday: 9:00 AM - 6:00 PM\nSaturday: 9:00 AM - 4:00 PM\nSunday: Closed",
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('business_hours', array(
+        'label' => 'Business Hours',
+        'section' => 'contact_section',
+        'type' => 'textarea',
+        'description' => 'Enter your business hours, one day per line.',
+    ));
+
+    // Footer Section
+    $wp_customize->add_section('footer_section', array(
+        'title' => 'Footer Content',
+        'priority' => 35,
+        'description' => 'Customize footer information and copyright text.',
+    ));
+
+    // Footer description
+    $wp_customize->add_setting('footer_description', array(
+        'default' => 'Premium hair salon specializing in curly hair, cutting-edge techniques, and personalized service.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('footer_description', array(
+        'label' => 'Footer Description',
+        'section' => 'footer_section',
+        'type' => 'textarea',
+    ));
+
+    // Copyright text
+    $wp_customize->add_setting('footer_copyright', array(
+        'default' => 'All rights reserved.',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('footer_copyright', array(
+        'label' => 'Copyright Text',
+        'section' => 'footer_section',
+        'type' => 'text',
+        'description' => 'Additional copyright text (year and site name are added automatically).',
+    ));
 }
 add_action('customize_register', 'shan_hair_customize_register');
 
@@ -494,4 +698,100 @@ function get_salon_email() {
 function get_salon_address() {
     return get_theme_mod('salon_address', 'Boston, MA');
 }
+
+// Helper functions for new customizer options
+function get_primary_color() {
+    return get_theme_mod('primary_color', '#d06b1f');
+}
+
+function get_secondary_color() {
+    return get_theme_mod('secondary_color', '#1b2a38');
+}
+
+function get_default_theme_mode() {
+    return get_theme_mod('default_theme_mode', 'auto');
+}
+
+function get_hero_title() {
+    return get_theme_mod('hero_title', 'Welcome to Shan Hair');
+}
+
+function get_hero_subtitle() {
+    return get_theme_mod('hero_subtitle', 'Brookline\'s curl experts since 2011! With 30 years of experience, Shan and our talented team specialize in bringing out the best in curls (and all hair types), offering expert cuts, color, and more in a fun, friendly, and professional atmosphere.');
+}
+
+function get_hero_button_text() {
+    return get_theme_mod('hero_button_text', 'Book Appointment');
+}
+
+function get_hero_button_link() {
+    return get_theme_mod('hero_button_link', '#contact');
+}
+
+function get_services_title() {
+    return get_theme_mod('services_title', 'Our Premium Services');
+}
+
+function get_services_description() {
+    return get_theme_mod('services_description', 'Expert services tailored to enhance your natural beauty and personal style.');
+}
+
+function get_booking_form_title() {
+    return get_theme_mod('booking_form_title', 'Book Your Appointment');
+}
+
+function get_booking_form_description() {
+    return get_theme_mod('booking_form_description', 'Ready to transform your hair? Book your appointment today and let our expert stylists create the perfect look for you.');
+}
+
+function get_business_hours() {
+    return get_theme_mod('business_hours', "Monday: 9:00 AM - 7:00 PM\nTuesday: 9:00 AM - 7:00 PM\nWednesday: 9:00 AM - 6:00 PM\nThursday: 9:00 AM - 7:00 PM\nFriday: 9:00 AM - 6:00 PM\nSaturday: 9:00 AM - 4:00 PM\nSunday: Closed");
+}
+
+function get_footer_description() {
+    return get_theme_mod('footer_description', 'Premium hair salon specializing in curly hair, cutting-edge techniques, and personalized service.');
+}
+
+function get_footer_copyright() {
+    return get_theme_mod('footer_copyright', 'All rights reserved.');
+}
+
+// Output dynamic CSS for customizer colors
+function shan_hair_customizer_css() {
+    $primary_color = get_primary_color();
+    $secondary_color = get_secondary_color();
+    
+    if ($primary_color !== '#d06b1f' || $secondary_color !== '#1b2a38') {
+        echo '<style type="text/css">';
+        echo ':root {';
+        if ($primary_color !== '#d06b1f') {
+            echo '--orange: ' . esc_attr($primary_color) . ';';
+            echo '--orange-light: ' . esc_attr($primary_color) . 'dd;';
+            echo '--orange-gradient: linear-gradient(135deg, ' . esc_attr($primary_color) . ', ' . esc_attr($primary_color) . 'dd);';
+        }
+        if ($secondary_color !== '#1b2a38') {
+            echo '--navy: ' . esc_attr($secondary_color) . ';';
+            echo '--navy-light: ' . esc_attr($secondary_color) . 'dd;';
+        }
+        echo '}';
+        echo '</style>';
+    }
+}
+add_action('wp_head', 'shan_hair_customizer_css');
+
+// Add theme data attribute to body for default theme mode
+function shan_hair_body_theme_data($classes) {
+    $default_mode = get_default_theme_mode();
+    return $classes;
+}
+add_filter('body_class', 'shan_hair_body_theme_data');
+
+// Add theme mode data attribute to body tag
+function shan_hair_body_theme_attribute() {
+    $default_mode = get_default_theme_mode();
+    echo ' data-default-theme="' . esc_attr($default_mode) . '"';
+}
+add_action('wp_body_open', function() {
+    echo '<script>document.body.setAttribute("data-theme", localStorage.getItem("shan-hair-theme") || "' . esc_js(get_default_theme_mode()) . '");</script>';
+});
 ?>
