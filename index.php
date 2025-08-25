@@ -21,59 +21,56 @@ get_header(); ?>
         </div>
         
         <div class="container">
-            <div class="hero-content reveal">
+            <div class="hero-content reveal animate-fade-in-up">
                 <div class="hero-text">
-                    <h1><?php echo get_theme_mod('hero_title', 'Welcome to Shan Hair'); ?></h1>
-                    <p class="hero-subtitle"><?php echo get_theme_mod('hero_subtitle', 'Brookline\'s curl experts since 2011! With 30 years of experience, Shan and our talented team specialize in bringing out the best in curls (and all hair types), offering expert cuts, color, and more in a fun, friendly, and professional atmosphere.'); ?></p>
+                    <h1 class="scroll-reveal"><?php echo get_hero_title(); ?></h1>
+                    <p class="hero-subtitle scroll-reveal"><?php echo get_hero_subtitle(); ?></p>
                     
-                    <div class="hero-announcement">
+                    <div class="hero-announcement scroll-reveal">
                         <h3>Announcement!</h3>
                         <p><strong>Kiki & Caitlyn accepting new clients. Shan is scheduling for existing clients.</strong></p>
                         <p class="note">NOTE: that Schedulicity is now VAGARO.</p>
                     </div>
                     
-                    <div class="trust-indicators">
-                        <div class="trust-item">
+                    <div class="trust-indicators stagger-animation">
+                        <div class="trust-item hover-lift">
                             <i class="fas fa-award"></i>
                             <span>30+ Years Experience</span>
                         </div>
-                        <div class="trust-item">
+                        <div class="trust-item hover-lift">
                             <i class="fas fa-certificate"></i>
                             <span>DevaCurl Certified</span>
                         </div>
-                        <div class="trust-item">
+                        <div class="trust-item hover-lift">
                             <i class="fas fa-star"></i>
                             <span>5-Star Rated</span>
                         </div>
                     </div>
                     
-                    <div class="cta-buttons">
-                        <a href="<?php echo get_salon_booking_url(); ?>" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+                    <div class="cta-buttons scroll-reveal">
+                        <a href="<?php echo get_hero_button_link(); ?>" class="btn btn-primary btn-lg hover-shine btn-ripple" target="_blank" rel="noopener">
                             <i class="fas fa-calendar-alt"></i>
-                            Schedule an Appointment
+                            <?php echo get_hero_button_text(); ?>
                         </a>
-                        <a href="<?php echo home_url('/services'); ?>" class="btn btn-outline btn-lg">
+                        <a href="<?php echo home_url('/services'); ?>" class="btn btn-outline btn-lg hover-lift">
                             <i class="fas fa-cut"></i>
                             View Services & Pricing
                         </a>
                     </div>
-                            View Services
-                        </a>
-                    </div>
                 </div>
                 
-                <div class="hero-features">
-                    <div class="feature-card reveal" data-delay="100">
+                <div class="hero-features stagger-animation">
+                    <div class="feature-card card hover-lift reveal-scale" data-delay="100">
                         <i class="fas fa-scissors"></i>
                         <h3>Expert Cutting</h3>
                         <p>Precision cuts tailored to your unique curl pattern and lifestyle</p>
                     </div>
-                    <div class="feature-card reveal" data-delay="200">
+                    <div class="feature-card card hover-lift reveal-scale" data-delay="200">
                         <i class="fas fa-palette"></i>
                         <h3>Color Mastery</h3>
                         <p>Goldwell certified colorists creating stunning, healthy transformations</p>
                     </div>
-                    <div class="feature-card reveal" data-delay="300">
+                    <div class="feature-card card hover-lift reveal-scale" data-delay="300">
                         <i class="fas fa-spa"></i>
                         <h3>Luxury Treatments</h3>
                         <p>Restorative treatments to enhance your hair's natural beauty</p>
